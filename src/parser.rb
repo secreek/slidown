@@ -24,6 +24,7 @@ class MarkdownParser < DocumentParser
       if line.start_with? '#'
         if current_node
           current_node[:content] = ListEntity.new current_list if current_list
+          current_list = nil
           result << current_node
         end
 
@@ -48,5 +49,3 @@ class MarkdownParser < DocumentParser
   end
 end
 
-mp = MarkdownParser.new(open('../docs/sample.md').read)
-puts mp.parse
