@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'open-uri'
 require_relative 'parser'
 require_relative 'builder'
 require_relative 'generator'
@@ -9,15 +10,11 @@ base_path = 'file_repo'
 post '/:user/:topic' do
   @user = params[:user]
   @topic = params[:topic]
-  puts params[:file]
-  puts params[:file][:tempfile]
-  puts params[:file][:filename]
-  puts @user
-  puts @topic
+
   unless params[:file] &&
-         (tmpfile = params[:file][:tempfile]) &&
-         (name = params[:file][:filename])
-    @error = "No file selected"
+       (tmpfile = params[:file][:tempfile]) &&
+       (name = params[:file][:filename])
+    @error = 'No file selected'
     erb :upload
   end
   @file_content = ''
@@ -27,7 +24,6 @@ post '/:user/:topic' do
   end
 
   parser = MarkdownParser.new(@file_content)
-  puts parser.parse
   builder = Builder.new parser.parse
   generator = Generator.new base_path, @user, @topic, 'guide'
   generator.generate builder.build_tree
@@ -36,6 +32,7 @@ end
 get '/:user/:topic' do
   @user = params[:user]
   @topic = params[:topic]
+
   erb :upload
 end
 

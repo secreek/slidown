@@ -7,7 +7,6 @@ class Generator
     @base_path = base_path
     @user = user
     @topic = topic
-
     FileUtils.mkpath target_path
   end
 
@@ -31,7 +30,9 @@ class Generator
 
     def gen_node node
       erb = ERB.new open('templates/html.erb').read
-      puts erb.result(binding)
-      open("#{target_path}/#{node.id}.html", 'w').write erb.result(binding)
+      result_file = open("#{target_path}/#{node.id}.html", 'w')
+      result_file.write erb.result(binding)
+      result_file.flush
+      result_file.close
     end
 end
