@@ -1,0 +1,9 @@
+html, body {background: url('../images/apple-texture.jpg')}
+body {font-family: "Gill Sans";}
+#main {color: white; margin: auto; text-shadow: 5px 5px 10px black}
+div.centered{ display:block; position:absolute; top:30%; width:100%; margin: auto;}
+div .pic {width: 85%; margin: auto}
+h1 {font-size: 100px; text-align: center}
+ul, p {font-size: 48px; margin: auto; width: 60%}
+img {display: block; border: 20px solid white}
+p {font-family: serif}
