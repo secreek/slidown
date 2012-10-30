@@ -1,8 +1,14 @@
 require 'erb'
+require 'fileutils'
 
 class Generator
-  def initialize base_path
+  def initialize base_path, user, topic, role
+    @role = role
     @base_path = base_path
+    @user = user
+    @topic = topic
+
+    FileUtils.mkpath target_path
   end
 
   def generate node
@@ -19,8 +25,13 @@ class Generator
   end
 
   private
+    def target_path
+      "#{@base_path}/#{@user}/#{@topic}"
+    end
+
     def gen_node node
       erb = ERB.new open('templates/html.erb').read
-      open("#{@base_path}/#{node.id}.html", 'w').write erb.result(binding)
+      puts erb.result(binding)
+      open("#{target_path}/#{node.id}.html", 'w').write erb.result(binding)
     end
 end

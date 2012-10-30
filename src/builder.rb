@@ -3,7 +3,6 @@ class Node
   attr_accessor :parent, :prev_sib, :next_sib, :first_child
 
   def initialize hash, id
-    puts id
     @id = id
     @title = hash[:title]
     @level = hash[:level]
