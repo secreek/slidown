@@ -7,7 +7,7 @@ require_relative 'generator'
 base_path = 'file_repo'
 
 # upload the file
-post '/:user/:topic' do
+post '/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
 
@@ -28,14 +28,32 @@ post '/:user/:topic' do
   generator = Generator.new base_path, @user, @topic, 'guide'
   generator.generate builder.build_tree
 
-  redirect "/#{@user}/#{@topic}/1"
+  redirect "/#{@user}/#{@topic}"
 end
 
-get '/:user/:topic' do
+get '/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
 
   erb :upload
+end
+
+# 选择角色
+get '/:user/:topic' do
+  @user = params[:user]
+  @topic = params[:topic]
+
+  erb :role
+end
+
+post '/:user/:topic' do
+  @user = params[:user]
+  @topic = params[:topic]
+
+  role = params[:role]
+  response.set_cookie 'slidown_role', role
+
+  redirect "/#{@user}/#{@topic}/1"
 end
 
 get '/:user/:topic/:page' do
@@ -49,7 +67,15 @@ __END__
 
 @@upload
 <%= @error %>
-<form action='/<%= @user %>/<%= @topic %>' enctype="multipart/form-data" method='POST'>
+<form action='/<%= @user %>/<%= @topic %>/upload' enctype="multipart/form-data" method='POST'>
     <input name="file" type="file" />
     <input type="submit" value="Upload" />
+</form>
+
+
+@@role
+<form action='/<%= @user %>/<%= @topic %>' enctype="multipart/form-data" method='POST'>
+    <input type="radio" name="role" value="Guide">Guide<br>
+    <input type="radio" name="role" value="Follower">Follower
+    <input type="submit" value="Get In" />
 </form>
