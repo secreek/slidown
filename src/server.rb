@@ -43,7 +43,7 @@ get '/:user/:topic' do
   @user = params[:user]
   @topic = params[:topic]
 
-  erb :role
+  erb open('templates/login.html.erb').read
 end
 
 post '/:user/:topic' do
@@ -70,12 +70,4 @@ __END__
 <form action='/<%= @user %>/<%= @topic %>/upload' enctype="multipart/form-data" method='POST'>
     <input name="file" type="file" />
     <input type="submit" value="Upload" />
-</form>
-
-
-@@role
-<form action='/<%= @user %>/<%= @topic %>' enctype="multipart/form-data" method='POST'>
-    <input type="radio" name="role" value="Guide">Guide<br>
-    <input type="radio" name="role" value="Follower">Follower
-    <input type="submit" value="Get In" />
 </form>

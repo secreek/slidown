@@ -17,3 +17,4 @@ tmp
 _yardoc
 doc/
 src/file_repo/
+.DS_Store
