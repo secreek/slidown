@@ -35,6 +35,7 @@ class MarkdownParser < DocumentParser
         raise "Missing title before #{line}" unless current_node
         current_node[:content] = ImgEntity.new line[(line.index('(') + 1)..(line.index(')') - 1)]
       elsif line.start_with? '-'
+        raise "Missing title before #{line}" unless current_node
         current_list ||= []
         current_list << line[1..-1].strip
       else
