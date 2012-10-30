@@ -27,6 +27,8 @@ post '/:user/:topic' do
   builder = Builder.new parser.parse
   generator = Generator.new base_path, @user, @topic, 'guide'
   generator.generate builder.build_tree
+
+  redirect "/#{@user}/#{@topic}/1"
 end
 
 get '/:user/:topic' do
