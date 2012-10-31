@@ -6,6 +6,11 @@ require_relative 'generator'
 
 base_path = 'file_repo'
 
+# Simulate network lag
+before do
+  sleep 0.5
+end
+
 # upload the file
 post '/:user/:topic/upload' do
   @user = params[:user]

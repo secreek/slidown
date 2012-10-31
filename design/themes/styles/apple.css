@@ -1,9 +1,23 @@
+* {margin: 0; padding: 0}
 html, body {background: url('../images/apple-texture.jpg')}
 body {font-family: "Gill Sans";}
-#main {color: white; margin: auto; text-shadow: 5px 5px 10px black}
-div.centered{ display:block; position:absolute; top:30%; width:100%; margin: auto;}
-div .pic {width: 85%; margin: auto}
-h1 {font-size: 100px; text-align: center}
-ul, p {font-size: 48px; margin: auto; width: 60%}
-img {display: block; border: 20px solid white}
-p {font-family: serif}
+h1 {font-size: 10vh; text-align: center; white-space: nowrap; margin: 5vh 0 5vh 0; text-shadow: 5px 5px 10px black;}
+#main {color: white; margin: auto;}
+
+/* Slogan */
+div .vmiddle { position:relative; top: 30vh;}
+div .vmiddle h1 { font-size: 15vh; white-space: normal}
+
+/* Picture */
+div .pic {width: 80%; margin: auto;}
+img {display: block;  height: 70vh; width: auto; box-shadow: 10px 10px 20px black; margin: 0 auto 0 auto}
+
+/* List */
+div .list {width: 80%; margin: auto}
+div .list li {font-size: 7vh;}
+ul {width: auto; margin: auto;}
+li {padding: 1vh}
+
+/* Text */
+div .text {margin: auto; width: 80%}
+p {font-family: serif; line-height: 130%; font-size: 5vh}
