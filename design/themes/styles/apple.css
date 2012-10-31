@@ -1,23 +1,79 @@
-* {margin: 0; padding: 0}
-html, body {background: url('../images/apple-texture.jpg')}
-body {font-family: "Gill Sans";}
-h1 {font-size: 10vh; text-align: center; white-space: nowrap; margin: 5vh 0 5vh 0; text-shadow: 5px 5px 10px black;}
-#main {color: white; margin: auto;}
+body { font-size: 1em;}
 
-/* Slogan */
-div .vmiddle { position:relative; top: 30vh;}
-div .vmiddle h1 { font-size: 15vh; white-space: normal}
+@media (min-height: 333px) {
+    html { font-size: 16px; }
+}
 
-/* Picture */
-div .pic {width: 80%; margin: auto;}
-img {display: block;  height: 70vh; width: auto; box-shadow: 10px 10px 20px black; margin: 0 auto 0 auto}
+@media (min-height: 666px) {
+    html { font-size: 33px; }
+}
 
-/* List */
-div .list {width: 80%; margin: auto}
-div .list li {font-size: 7vh;}
-ul {width: auto; margin: auto;}
-li {padding: 1vh}
+@media (min-height: 1000px) {
+    html { font-size: 50px; }
+}
 
-/* Text */
-div .text {margin: auto; width: 80%}
-p {font-family: serif; line-height: 130%; font-size: 5vh}
+* {
+	margin: 0; padding: 0
+}
+
+html, body {
+	background-color: black;
+/* 	background: url('../images/apple-texture.jpg'); */
+	background: url('/img/apple-texture.jpg');
+}
+
+body {
+	font-family: "Gill Sans", sans-serif;
+	color: white;
+	font-size: 5vh;
+}
+
+img, ul, p {
+	margin: auto;
+	width: 80%;
+	display: block;
+}
+
+h1 {
+	font-size: 2em;
+	font-size: 10vmin;
+	text-align: center;
+	white-space: nowrap;
+	margin: 0.5em auto 0.5em auto;
+	text-shadow: 0.05em 0.05em 0.1em black;
+	width: 80%;
+}
+
+h1:only-child {
+	font-size: 2.5em;
+	font-size: 12.5vmin;
+	position:relative;
+	top: 2em;
+	top: 20vh;
+	white-space: normal;
+}
+
+img {
+	max-width: 80%;
+	max-height: 14em;
+	max-height: 70vh;
+	width: auto;
+	height: 14em;
+	height: 70vh;
+	box-shadow: 0.2em 0.2em 0.4em black;
+}
+
+ul li {
+	font-size: 1.5em;
+	font-size: 7.5vh;
+	padding: 0.2em;
+	padding: 1vh;
+}
+
+p {
+	font-size: 1.2em;
+	font-size: 6vh;
+	font-family: serif;
+	line-height: 130%;
+}
+
