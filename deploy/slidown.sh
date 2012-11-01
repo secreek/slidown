@@ -5,8 +5,8 @@ SCRIPT_NAME=solidown
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
-THIN_CONFIG=/etc/thin/test.yml
-SOLIDOWN_CONFIG=/tmp/config.ru
+THIN_CONFIG=/home/slidown/slidown.yml
+SOLIDOWN_CONFIG=/home/slidown/slidown/src/config.ru
 NOHUP=/usr/bin/nohup
 
 [-x "$DAEMON"] || exit 0
