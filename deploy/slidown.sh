@@ -9,20 +9,20 @@ THIN_CONFIG=/home/slidown/slidown.yml
 SOLIDOWN_CONFIG=/home/slidown/slidown/src/config.ru
 NOHUP=/usr/bin/nohup
 
-[-x "$DAEMON"] || exit 0
-
+[ -x "$THIN" ] || exit 0
+echo $1
 case "$1" in
 	start)
-		$NOHUP $THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG start
+		$THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG start
 		;;
 	stop)
-		$NOHUP $THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG stop
+		$THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG stop
 		;;
 	restart)
-		$NOHUP $THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG restart
+		$THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG restart
 		;;
 	*)
-		echo "Usage : $SCRIPT_NAME {start|stop|restart}" > &2
+		echo "Usage : $SCRIPT_NAME {start|stop|restart}" >&2
 		exit 3
 		;;
 esac
