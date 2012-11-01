@@ -13,6 +13,22 @@ class Node
   def to_s
     @id.to_s
   end
+  
+  def next
+    if @first_child # first iterate through child
+      @first_child
+    elsif @next_sib # next, interate through sibling
+      @next_sib
+    else
+      return nil if @parent == nil; # Solo
+      node = @parent;
+      while node != nil && node.next_sib == nil
+        node = node.parent
+        return nil if node == nil
+      end
+      node.next_sib
+    end
+  end
 end
 
 class Builder
@@ -44,6 +60,7 @@ class Builder
         end
         new_node.prev_sib = sibling
         sibling.next_sib = new_node
+        new_node.parent = sibling.parent
       end
 
       prev_node = new_node

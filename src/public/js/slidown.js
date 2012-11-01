@@ -4,10 +4,14 @@ function nextPage() {
 
     first_child = get_meta('first_child');
     next_sib = get_meta('next_sib');
-    if(first_child != "") {
-      base_path += first_child;
-    } else if(next_sib != "") {
-      base_path += next_sib;
+	next = get_meta('next');
+
+    // if(first_child != "") {
+    //   base_path += first_child;
+    // } else if(next_sib != "") {
+    //   base_path += next_sib;
+	if (next != "") {
+      base_path += next;
     } else {
       alert('The Show has come to an end');
       return;

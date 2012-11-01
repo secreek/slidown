@@ -11,15 +11,9 @@ class Generator
   end
 
   def generate node
-    gen_node node
-
-    # first iterate through child
-    if node.first_child
-      generate node.first_child
-    end
-    # next, interate through sibling
-    if node.next_sib
-      generate node.next_sib
+    if node
+      gen_node node
+      generate node.next
     end
   end
 

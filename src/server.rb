@@ -8,7 +8,7 @@ base_path = 'file_repo'
 
 # Simulate network lag
 before do
-  sleep 0.5
+  sleep 0
 end
 
 # upload the file
