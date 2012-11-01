@@ -1,13 +1,13 @@
 #!/bin/sh
 THIN=/usr/local/rvm/gems/ruby-1.9.3-p286/bin/thin
-SCRIPT_NAME = solidown
+SCRIPT_NAME=solidown
 
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
-THIN_CONFIG = /etc/thin/test.yml
-SOLIDOWN_CONFIG = /tmp/config.ru
-NOHUP = /usr/bin/nohup
+THIN_CONFIG=/etc/thin/test.yml
+SOLIDOWN_CONFIG=/tmp/config.ru
+NOHUP=/usr/bin/nohup
 
 [-x "$DAEMON"] || exit 0
 
