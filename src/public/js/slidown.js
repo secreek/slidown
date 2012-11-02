@@ -26,6 +26,6 @@ document.onkeypress = function(e) {
   }
 }
 
-document.mousedown = function(e) {
+document.onmousedown = function(e) {
 	nextPage();
 }
