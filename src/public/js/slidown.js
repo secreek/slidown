@@ -26,6 +26,10 @@ document.onkeypress = function(e) {
   }
 }
 
-document.onmousedown = function(e) {
+document.onclick = function(e) {
+	nextPage();
+}
+
+document.ontouchmove = function(e) {
 	nextPage();
 }
