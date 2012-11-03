@@ -47,7 +47,7 @@ post '/api/github_hooks' do
   @path = "https://api.github.com/repos/#{@user}/#{@topic}/contents/README.md"
 
   # Full control
-  uri = URI.parse("/api/#{user}/#{topic}/upload")
+  uri = URI.parse("/api/#{@user}/#{@topic}/upload")
   http = Net::HTTP.new(uri.host, uri.port)
 
   request = Net::HTTP::Post.new(uri.request_uri)
