@@ -185,8 +185,42 @@
 ## Parser
 
 ## Reactor
+### 反应堆？
+- DSL
+- TTS
+- and BOOM!
 
-## Assembler
+### 使用技术
+- Python & Libs
+
+### DSL
+- 去掉“障碍”元素
+- 标准化标签
+- 语意化Web
+
+### TTS
+- 做转发代理
+- 调用张工开发的TTS服务
+- 目的就是一个字，“快！”
+
+### 下一步？
+- 完善DSL
+
+## Assembler & 杂项
+### 基本功能
+- 好“卖相”
+- 无障碍功能（前端交互）
+
+### 技术知识
+- Python
+- XML & XSLT
+
+### 典型开发流程
+- 编写静态页面
+- 抽取静态页面中“可变”部分
+- 利用XSLT语法编写.xsl文件
+- 上线测试
+- DEBUG
 
 # The End
 
