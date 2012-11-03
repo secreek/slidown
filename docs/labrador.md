@@ -222,5 +222,12 @@
 - 上线测试
 - DEBUG
 
+### 杂项
+- Translate Cache
+- 调用Google的Translate服务进行翻译
+- 将结果进行缓存
+- 好处？
+- 倍儿省钱！
+
 # The End
 
