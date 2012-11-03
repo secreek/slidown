@@ -48,7 +48,13 @@ post '/api/github_hooks' do
 
   # Full control
   uri = URI("http://slidown.com/api/#{@user}/#{@topic}/upload")
-  res = Net::HTTP.post_form(uri, "github_path" => @path)
+
+  Net::HTTP.start(uri.host, uri.port) do |http|
+    request = Net::HTTP::Post.new uri.request_uri
+    request.set_form_data({"github_path" => @path})
+
+    response = http.request request # Net::HTTPResponse object
+  end
 
   '
   uri = URI.parse("http://slidown.com/api/#{@user}/#{@topic}/upload")
