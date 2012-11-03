@@ -41,7 +41,7 @@ post '/api/github_hooks'
   push = JSON.parse(params[:payload])
   @user = push['repository']['owner']['name']
   @topic = push['repository']['name']
-  @path = "https://api.github.com/repos/#{@user}/#{@topic}/contents/show.md"
+  @path = "https://api.github.com/repos/#{@user}/#{@topic}/contents/README.md"
 
   # Full control
   uri = URI.parse("/api/#{user}/#{topic}/upload")
