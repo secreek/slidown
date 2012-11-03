@@ -55,16 +55,6 @@ post '/api/github_hooks' do
 
     response = http.request request # Net::HTTPResponse object
   end
-
-  '
-  uri = URI.parse("http://slidown.com/api/#{@user}/#{@topic}/upload")
-  http = Net::HTTP.new(uri.host, uri.port)
-
-  request = Net::HTTP::Post.new("/api/#{@user}/#{@topic}/upload")
-  request.set_form_data({"github_path" => @path})
-
-  http.request(request)
-  '
 end
 
 # try to provide an api for file upload
