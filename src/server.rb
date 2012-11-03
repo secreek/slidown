@@ -1,6 +1,9 @@
 require 'sinatra'
-require 'open-uri', 'base64', 'json'
-require 'net/http', 'uri'
+require 'open-uri'
+require 'base64'
+require 'json'
+require 'net/http'
+require 'uri'
 require_relative 'parser'
 require_relative 'builder'
 require_relative 'generator'
@@ -37,7 +40,7 @@ post '/:user/:topic/upload' do
   redirect "/#{@user}/#{@topic}"
 end
 
-post '/api/github_hooks'
+post '/api/github_hooks' do
   push = JSON.parse(params[:payload])
   @user = push['repository']['owner']['name']
   @topic = push['repository']['name']
@@ -54,7 +57,7 @@ post '/api/github_hooks'
 end
 
 # try to provide an api for file upload
-post '/api/:user/:topic/upload'
+post '/api/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
   @path = params[:github_path]
