@@ -144,5 +144,49 @@
 - 门户 搜索引擎
 - 办公平台
 
+## 协同开发模式
+
+### 欧巴, Git Style!
+- Github Based
+- Issue Driven
+
+### Issue Lifecycle
+- Submit 
+- Assign
+- Develop
+- Close
+
+## 安装部署及日常管理
+
+### 基本技能 
+- Shell Script & Python
+- Linux System Admin
+
+### 主要功能
+- 部署服务环境
+- 网站管理(启动、停止、备份、恢复)
+- 模块调度
+
+### 参考
+- Source Code : https://github.com/hrbesd/labrador/tree/master/src/deployment
+- Doc : https://github.com/hrbesd/labrador/blob/master/docs/admin.md
+
+### 待解决的问题及未来开发方向
+- Web Admin
+- 第三方协同工具
+- 
+
+## 测试
+
+### 手动测试 -> 测试用例
+
+## Forerunner & Spider
+
+## Parser
+
+## Reactor
+
+## Assembler
+
 # The End
 
