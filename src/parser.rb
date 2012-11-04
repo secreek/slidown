@@ -1,10 +1,3 @@
-require_relative 'entity'
-
-module Markdown
-  def document
-  end
-end
-
 class DocumentParser
 end
 
@@ -16,34 +9,32 @@ class MarkdownParser < DocumentParser
   def parse
     result = []
     current_node = nil
-    current_list = nil
+    current_content = nil
 
     @source.each_line do |line|
-      line = line.strip
-      next if line.length == 0
-      if line.start_with? '#'
+      if line.strip.start_with? '#'
         if current_node
-          current_node[:content] = ListEntity.new current_list if current_list
-          current_list = nil
+          current_node[:content] = current_content.join("\n")
           result << current_node
         end
 
         current_node = {}
         level = line.match(/#*/)[0].length
         current_node[:level] = level
-        current_node[:title] = TitleEntity.new line[level..-1].strip
-      elsif line.start_with? '!['
-        raise "Missing title before #{line}" unless current_node
-        current_node[:content] = ImgEntity.new line[(line.index('(') + 1)..(line.index(')') - 1)]
-      elsif line.start_with? '-'
-        raise "Missing title before #{line}" unless current_node
-        current_list ||= []
-        current_list << line[1..-1].strip
+        title = line.match(/[^# ][^#]*/)
+        if title
+          title = title[0]
+        else
+          title = ""
+        end
+        current_node[:title] = title
+        current_content = [line]
       else
-        current_node[:content] = TextEntity.new line
+        current_content << line if line.strip.length > 0
       end
     end
 
+    current_node[:content] = current_content.join("\n")
     result << current_node
     result
   end
