@@ -1,3 +1,5 @@
+require 'markdown'
+
 class Node
   attr_accessor :id, :title, :content, :level
   attr_accessor :parent, :prev_sib, :next_sib, :first_child
@@ -10,10 +12,14 @@ class Node
     @parent = @prev_sib = @next_sib = @first_child = nil
   end
 
+  def content
+    Markdown.new(@content).to_html if @content.strip.length > 0
+  end
+
   def to_s
     @id.to_s
   end
-  
+
   def next
     if @first_child # first iterate through child
       @first_child
@@ -50,7 +56,9 @@ class Builder
         new_node.parent = prev_node.parent
         new_node.prev_sib = prev_node
         prev_node.next_sib = new_node
-      elsif new_node.level == (prev_node.level + 1) # first child
+      # what if # => ### ?
+      # it should be okay
+      elsif new_node.level >= (prev_node.level + 1) # first child
         new_node.parent = prev_node
         prev_node.first_child = new_node
       else # parent's sibling

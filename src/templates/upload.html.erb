@@ -1,0 +1,5 @@
+<%= @error %>
+<form action='/<%= @user %>/<%= @topic %>/upload' enctype="multipart/form-data" method='POST'>
+    <input name="file" type="file" />
+    <input type="submit" value="Upload" />
+</form>

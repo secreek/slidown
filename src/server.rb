@@ -24,7 +24,7 @@ post '/:user/:topic/upload' do
        (tmpfile = params[:file][:tempfile]) &&
        (name = params[:file][:filename])
     @error = 'No file selected'
-    erb :upload
+    erb open('templates/upload.html.erb').read
   end
   @file_content = ''
   while blk = tmpfile.read(65536)
@@ -78,7 +78,7 @@ get '/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
 
-  erb :upload
+  erb open('templates/upload.html.erb').read
 end
 
 # 选择角色
@@ -105,12 +105,3 @@ get '/:user/:topic/:page' do
   page = params[:page]
   File.read(File.join("#{base_path}/#{user}/#{topic}", "#{page}.html"))
 end
-
-__END__
-
-@@upload
-<%= @error %>
-<form action='/<%= @user %>/<%= @topic %>/upload' enctype="multipart/form-data" method='POST'>
-    <input name="file" type="file" />
-    <input type="submit" value="Upload" />
-</form>
