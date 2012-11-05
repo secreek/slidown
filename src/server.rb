@@ -48,7 +48,7 @@ post '/api/github_hooks' do
   @path = "https://api.github.com/repos/#{@user}/#{@topic}/contents/README.md"
 
   # Full control
-  uri = URI("http://slidown.com/api/#{@user}/#{@topic}/upload")
+  uri = URI("http://slidown.com/api/#{@user}/#{@topic}/upload") # FIXME - Using Constants
 
   Net::HTTP.start(uri.host, uri.port) do |http|
     request = Net::HTTP::Post.new uri.request_uri
@@ -104,7 +104,7 @@ end
 get '/:user/:topic/welcome' do
   @user = params[:user]
   @topic = params[:topic]
-  @qrcode_url = "http://slidown.com" + "/" + @user + "/" + @topic
+  @qrcode_url = "http://slidown.com" + "/" + @user + "/" + @topic # FIXME - Using Constants
   @qr = RQRCode::QRCode.new(@qrcode_url,:size => 4,:level=> :h)
 
   erb open('templates/welcome.html.erb').read
@@ -117,7 +117,13 @@ post '/:user/:topic' do
   role = params[:role]
   response.set_cookie 'slidown_role', role
 
-  redirect "/#{@user}/#{@topic}/1"
+  redirect "/#{@user}/#{@topic}/0"
+end
+
+get '/:user/:topic/0' do
+  @user = params[:user]
+  @topic = params[:topic]
+  erb open('templates/opening.html.erb').read
 end
 
 get '/:user/:topic/:page' do
