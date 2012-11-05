@@ -77,7 +77,7 @@ end
 
 # The default homepage was redirect to /about/me
 get '/' do
-  redirect "/about/me"
+  redirect "/me/about"
 end
 
 get '/:user/:topic/upload' do

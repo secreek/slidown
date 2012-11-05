@@ -24,11 +24,14 @@
 
               }
       input {font-family: monospace;}
+		footer {width: 100%; margin: 0 auto 0 auto; text-align: center; position: absolute; bottom: 100px;}
+		footer a {display:inline-block; color: white; text-decoration: none; font-family: "Rockwell", "Palatino", serif; font-size: 200%; margin: auto; padding: 0 20px 0 20px}
+		footer a:hover {text-shadow: 0 0 5px #fff700}
     </style>
    
   </head>
   <body>
-    <div id="title"><h1>Welcome to <%= @user %>'s show!</h1></div>
+    <header id="title"><h1>Welcome to <%= @user %>'s show!</h1></header>
     <div id="main">
       <div id="audience" class="role">
         <form action='/<%= @user %>/<%= @topic %>' method='POST'>
@@ -47,5 +50,10 @@
         </form>
       </div>
     </div>
+	<footer>
+		<a href="/<%= @user %>/<%= @topic %>/invite">Invite Someone</a>
+		<a href="/<%= @user %>/<%= @topic %>/welcome">QR Code &amp; URL</a>
+		<a href="/me/about">About Slidown</a>
+	</footer>
   </body>
 </html>
