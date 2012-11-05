@@ -75,6 +75,11 @@ post '/api/:user/:topic/upload' do
   'Success!'
 end
 
+# The default homepage was redirect to /about/me
+get '/' do
+  redirect "/about/me"
+end
+
 get '/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
@@ -108,3 +113,6 @@ get '/:user/:topic/:page' do
   page = params[:page]
   File.read(File.join("#{base_path}/#{user}/#{topic}", "#{page}.html"))
 end
+
+
+
