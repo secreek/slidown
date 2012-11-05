@@ -1,7 +1,6 @@
 #!/bin/sh
-THIN=/usr/local/rvm/gems/ruby-1.9.3-p286/bin/thin
+THIN=/usr/local/bin/thin
 SCRIPT_NAME=solidown
-
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
