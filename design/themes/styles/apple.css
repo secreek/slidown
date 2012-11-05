@@ -44,10 +44,10 @@ h1, h2, h3, h4, h5, h6 {
 	width: 80%;
 }
 
-h1, h2, h3, h4, h5, h6:only-child {
+h1:only-child, h2:only-child, h3:only-child, h4:only-child, h5:only-child, h6:only-child {
 	font-size: 2.5em;
 	font-size: 12.5vmin;
-	position:relative;
+	position: relative;
 	top: 2em;
 	top: 20vh;
 	white-space: normal;
