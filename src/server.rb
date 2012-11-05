@@ -87,6 +87,13 @@ get '/:user/:topic/upload' do
   erb open('templates/upload.html.erb').read
 end
 
+# 对于结尾增加 “/” 的请求，重定向到 "/#{@user}/#{@topic}
+get '/:user/:topic/' do
+
+  redirect "/#{@user}/#{@topic}"
+
+end
+
 # 选择角色
 get '/:user/:topic' do
   @user = params[:user]
