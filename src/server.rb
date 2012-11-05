@@ -4,6 +4,7 @@ require 'base64'
 require 'json'
 require 'net/http'
 require 'uri'
+require 'rqrcode'
 require_relative 'parser'
 require_relative 'builder'
 require_relative 'generator'
@@ -85,6 +86,8 @@ end
 get '/:user/:topic' do
   @user = params[:user]
   @topic = params[:topic]
+  @qrcode_url = "http://slidown.com" + "/" + @user + "/" + @topic
+  @qr = RQRCode::QRCode.new(@qrcode_url,:size => 4,:level=> :h)
 
   erb open('templates/login.html.erb').read
 end
