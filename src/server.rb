@@ -10,6 +10,7 @@ require_relative 'builder'
 require_relative 'generator'
 
 base_path = 'file_repo'
+slidown_url = 'http://slidown.com'
 
 # Simulate network lag
 before do
@@ -104,7 +105,7 @@ end
 get '/:user/:topic/welcome' do
   @user = params[:user]
   @topic = params[:topic]
-  @qrcode_url = "http://slidown.com" + "/" + @user + "/" + @topic # FIXME - Using Constants
+  @qrcode_url = slidown_url + "/" + @user + "/" + @topic # FIXME - Using Constants
   @qr = RQRCode::QRCode.new(@qrcode_url,:size => 4,:level=> :h)
 
   erb open('templates/welcome.html.erb').read
@@ -130,8 +131,20 @@ get '/:user/:topic/:page' do
   user = params[:user]
   topic = params[:topic]
   page = params[:page]
-  File.read(File.join("#{base_path}/#{user}/#{topic}", "#{page}.html"))
+  
+  begin
+    File.read(File.join("#{base_path}/#{user}/#{topic}", "#{page}.html"))
+  rescue Errno::ENOENT
+    raise Sinatra::NotFound
+  end
+
+
 end
 
+not_found do
 
+  '404 Not Found'
+  # 404 页面完成后启用如下代码
+  #erb open('templates/404.html.erb').read
+end
 
