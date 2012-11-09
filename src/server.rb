@@ -26,7 +26,7 @@ post '/:user/:topic/upload' do
        (tmpfile = params[:file][:tempfile]) &&
        (name = params[:file][:filename])
     @error = 'No file selected'
-    erb open('templates/upload.html.erb').read
+	erb :upload
   end
   @file_content = ''
   while blk = tmpfile.read(65536)
@@ -85,7 +85,7 @@ get '/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
 
-  erb open('templates/upload.html.erb').read
+  erb :upload
 end
 
 # 对于结尾增加 “/” 的请求，重定向到 "/#{@user}/#{@topic}
@@ -99,7 +99,7 @@ end
 get '/:user/:topic' do
   @user = params[:user]
   @topic = params[:topic]
-  erb open('templates/login.html.erb').read
+  erb :login
 end
 
 get '/:user/:topic/welcome' do
@@ -108,7 +108,7 @@ get '/:user/:topic/welcome' do
   @qrcode_url = slidown_url + "/" + @user + "/" + @topic # FIXME - Using Constants
   @qr = RQRCode::QRCode.new(@qrcode_url,:size => 4,:level=> :h)
 
-  erb open('templates/welcome.html.erb').read
+  erb :welcome
 end
 
 post '/:user/:topic' do
@@ -124,7 +124,7 @@ end
 get '/:user/:topic/0' do
   @user = params[:user]
   @topic = params[:topic]
-  erb open('templates/opening.html.erb').read
+  erb :opening
 end
 
 get '/:user/:topic/:page' do
@@ -145,6 +145,6 @@ not_found do
 
   '404 Not Found'
   # 404 页面完成后启用如下代码
-  #erb open('templates/404.html.erb').read
+  #erb :404
 end
 

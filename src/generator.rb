@@ -23,7 +23,7 @@ class Generator
     end
 
     def gen_node node
-      erb = ERB.new open('templates/html.erb').read
+      erb = ERB.new open('views/html.erb').read
       result_file = open("#{target_path}/#{node.id}.html", 'w')
       result_file.write erb.result(binding)
       result_file.flush
