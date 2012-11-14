@@ -106,9 +106,21 @@ get '/:user/:topic/welcome' do
   @user = params[:user]
   @topic = params[:topic]
   @qrcode_url = slidown_url + "/" + @user + "/" + @topic # FIXME - Using Constants
-  @qr = RQRCode::QRCode.new(@qrcode_url,:size => 4,:level=> :h)
 
-  erb :welcome
+  # QRCode versions
+  #http://www.qrcode.com/en/vertable1.html
+  #Version 6 Level L Support 1088bits
+  #
+  #TODO:Use the shorten url  to fix this problem 
+  begin
+    @qr = RQRCode::QRCode.new(@qrcode_url,:size => 6,:level=> :l)
+    erb :welcome
+  rescue RQRCode::QRCodeRunTimeError
+    "Your url is too long"
+  end
+
+  
+
 end
 
 post '/:user/:topic' do
