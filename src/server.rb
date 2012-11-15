@@ -8,6 +8,17 @@ require 'rqrcode'
 require_relative 'parser'
 require_relative 'builder'
 require_relative 'generator'
+require 'omniauth'
+require 'omniauth-github'
+require 'openssl'
+
+module OpenSSL
+  module SSL
+    remove_const :VERIFY_PEER
+  end
+end
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 
 base_path = 'file_repo'
 slidown_url = 'http://slidown.com'
@@ -16,6 +27,57 @@ slidown_url = 'http://slidown.com'
 before do
   sleep 0
 end
+
+#User Authentication with Github Gmail and OpenID
+
+use Rack::Session::Cookie
+  use OmniAuth::Builder do
+    provider :github, '87a45513d2fa93e5854b', '60688ec9202a8782c5e32c707520b7ecdff497f5', scope: "user"
+    #To-Do Gmail and OpenID Provider
+  end
+
+  get '/signup' do
+    <<-HTML
+  <a href='http://slidown.com/auth/github'>Login with Github</a></li>
+  HTML
+  end
+
+  %w(get post).each do |method|
+    send(method, "/auth/:provider/callback") do
+
+    #TODO: Add the route or anything you want   
+    <<-HTML
+        <h1>#{params[:provider]}</h1>
+        <pre>#{JSON.pretty_generate(env['omniauth.auth'])}</pre>
+        <a href='/logout'>Logout</a>
+    HTML
+    end
+  end
+
+  get '/auth/failure' do
+    #TODO: Add the Auth Failure view
+    #
+    erb "<h1>Authentication Failed:</h1><h3>message:</h3><pre>#{params}</pre><a href='/'>index</a>"
+  end
+
+  get '/auth/:provider/deauthorized' do
+    #TODO: Add the Deauthorized View
+    erb "#{params[:provider]} has deauthorized this app."
+  end
+
+  get '/protected' do
+    #TODO: Add the NOT Authorized 
+    throw(:halt, [401, "Not authorized\n"]) unless session[:authenticated]
+    erb %Q{
+      <pre>#{request.env['omniauth.auth'].to_json}</pre><hr>
+      <a href='/logout'>Logout</a>
+    }
+  end
+
+  get '/logout' do
+    session[:authenticated] = false
+    redirect '/'
+  end
 
 # upload the file
 post '/:user/:topic/upload' do
