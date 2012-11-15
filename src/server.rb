@@ -10,6 +10,7 @@ require_relative 'builder'
 require_relative 'generator'
 require 'omniauth'
 require 'omniauth-github'
+require 'omniauth-google-oauth2'
 require 'openssl'
 
 module OpenSSL
@@ -33,12 +34,16 @@ end
 use Rack::Session::Cookie
   use OmniAuth::Builder do
     provider :github, '87a45513d2fa93e5854b', '60688ec9202a8782c5e32c707520b7ecdff497f5', scope: "user"
-    #To-Do Gmail and OpenID Provider
+    provider :google_oauth2, '369476432445.apps.googleusercontent.com', 'wGNmnLGkqBCWBBkdX59aD2v3', {}
+    #To-Do OpenID Provider
   end
 
   get '/signup' do
     <<-HTML
-  <a href='http://slidown.com/auth/github'>Login with Github</a></li>
+    <ul>
+        <li><a href='http://slidown.com/auth/github'>Login with Github</a></li>
+        <li><a href='/auth/google_oauth2'>Sign in with Google</a></li>
+    </ul>
   HTML
   end
 
