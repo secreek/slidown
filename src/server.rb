@@ -10,6 +10,8 @@ require_relative 'builder'
 require_relative 'generator'
 require 'omniauth'
 require 'omniauth-github'
+require 'omniauth-openid'
+require 'openid/store/filesystem'
 require 'omniauth-google-oauth2'
 require 'openssl'
 
@@ -35,17 +37,25 @@ use Rack::Session::Cookie
   use OmniAuth::Builder do
     provider :github, '87a45513d2fa93e5854b', '60688ec9202a8782c5e32c707520b7ecdff497f5', scope: "user"
     provider :google_oauth2, '369476432445.apps.googleusercontent.com', 'wGNmnLGkqBCWBBkdX59aD2v3', {}
-    #To-Do OpenID Provider
+    provider :open_id, :store => OpenID::Store::Filesystem.new('/tmp')
+
+    #To-Do Now ,you should give the open-id identifier by hand,we should choose one open-id identifier 
+    #or support several identifier
+    # https://github.com/intridea/omniauth-openid
+    # Google OpenID Endpoints:https://www.google.com/accounts/o8/id
+    # 
   end
 
   get '/signup' do
     <<-HTML
     <ul>
-        <li><a href='http://slidown.com/auth/github'>Login with Github</a></li>
+        <li><a href='/auth/github'>Login with Github</a></li>
         <li><a href='/auth/google_oauth2'>Sign in with Google</a></li>
+        <li><a href='/auth/open_id'>Sign in with OpenID</a></li>
     </ul>
   HTML
   end
+
 
   %w(get post).each do |method|
     send(method, "/auth/:provider/callback") do
