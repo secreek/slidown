@@ -37,13 +37,7 @@ use Rack::Session::Cookie
   use OmniAuth::Builder do
     provider :github, '87a45513d2fa93e5854b', '60688ec9202a8782c5e32c707520b7ecdff497f5', scope: "user"
     provider :google_oauth2, '369476432445.apps.googleusercontent.com', 'wGNmnLGkqBCWBBkdX59aD2v3', {}
-    provider :open_id, :store => OpenID::Store::Filesystem.new('/tmp')
-
-    #To-Do Now ,you should give the open-id identifier by hand,we should choose one open-id identifier 
-    #or support several identifier
-    # https://github.com/intridea/omniauth-openid
-    # Google OpenID Endpoints:https://www.google.com/accounts/o8/id
-    # 
+    provider :open_id, store: OpenID::Store::Filesystem.new('/tmp')
   end
 
   get '/signup' do
@@ -51,10 +45,23 @@ use Rack::Session::Cookie
     <ul>
         <li><a href='/auth/github'>Login with Github</a></li>
         <li><a href='/auth/google_oauth2'>Sign in with Google</a></li>
-        <li><a href='/auth/open_id'>Sign in with OpenID</a></li>
+        <li><a href='/auth/open_id?openid_url=https://openid.stackexchange.com'>Sign in with OpenID_StackExchange</a></li>
+        <li><a href='/auth/open_id?openid_url=https://www.google.com/accounts/o8/id'>Sign in with OpenID_Google</a></li>
+        <li><a href='/auth/open_id?openid_url=https://me.yahoo.com'>Sign in with OpenID_Yahoo</a></li>
+        <li><a href='/auth/open_id?openid_url=http://www.flickr.com/username'>Sign in with OpenID_Flickr</a></li>
+        <li><a href='/auth/open_id?openid_url=http://openid.aol.com/username'>Sign in with OpenID_AOL</a></li>
+        <li><a href='/auth/open_id?openid_url=https://www.blogspot.com/'>Sign in with OpenID_Blogspot</a></li>
+        <li><a href='/auth/open_id?openid_url=http://username.livejournal.com/'>Sign in with OpenID_LiveJournal</a></li>
+        <li><a href='/auth/open_id?openid_url=https://username.wordpress.com/'>Sign in with OpenID_Wordpress</a></li>
+        <li><a href='/auth/open_id?openid_url=https://pip.verisignlabs.com/'>Sign in with OpenID_VerisignLabs</a></li>
+        <li><a href='/auth/open_id?openid_url=https://www.myopenid.com/'>Sign in with OpenID_MyOpenID</a></li>
+        <li><a href='/auth/open_id?openid_url=https://myvidoop.com/'>Sign in with OpenID_MyVidoop</a></li>
+        <li><a href='/auth/open_id?openid_url=https://claimid.com/username'>Sign in with OpenID_ClaimID</a></li>
+        <li><a href='/auth/open_id?openid_url=https://technorati.com/people/technorati/username/'>Sign in with OpenID_Technorati</a></li>
     </ul>
   HTML
   end
+
 
 
   %w(get post).each do |method|
