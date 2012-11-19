@@ -5,7 +5,7 @@ SCRIPT_NAME=solidown
 # 缺省设置供测试使用
 
 THIN_CONFIG=/home/slidown/slidown.yml
-SOLIDOWN_CONFIG=/home/slidown/slidown/src/config.ru
+SOLIDOWN_CONFIG=/home/slidown/current/src/config.ru
 NOHUP=/usr/bin/nohup
 
 [ -x "$THIN" ] || exit 0
