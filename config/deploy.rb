@@ -2,7 +2,7 @@
 #CONFIG
 #========================
 set :application, "slidown"
- 
+default_run_options[:pty] = true 
 set :scm, :git
 set :git_enable_submodules, 1
 set :repository, "git@github.com:secreek/slidown.git"
@@ -11,9 +11,10 @@ set :ssh_options, { :forward_agent => true }
  
 set :stage, :production
 set :user, "slidown"
-set :use_sudo, false
+set :use_sudo, true 
 set :runner, "deploy"
 set :deploy_to, "/home/#{application}"
+#set :deploy_to, "/var/www/#{application}"
 set :app_server, :thin
 set :domain, "slidown.com"
  

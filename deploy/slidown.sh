@@ -1,11 +1,11 @@
 #!/bin/sh
 THIN=/usr/local/bin/thin
-SCRIPT_NAME=solidown
+SCRIPT_NAME=slidown
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
 THIN_CONFIG=/home/slidown/slidown.yml
-SOLIDOWN_CONFIG=/home/slidown/current/src/config.ru
+SOLIDOWN_CONFIG=/home/slidown/slidown/src/config.ru
 NOHUP=/usr/bin/nohup
 
 [ -x "$THIN" ] || exit 0
