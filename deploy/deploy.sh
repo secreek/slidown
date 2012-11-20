@@ -27,7 +27,6 @@ GITDIR=${PRODUCT_DIR}'/.git'
 ADMIN_SCRIPT=${PRODUCT_DIR}'/deploy/'${REPO}'.sh'
 PRODUCT_USER=$REPO
 REMOTE_USER='gof'
-
-ssh $REMOTE_HOST sudo -u $PRODUCT_USER git --git-dir=$GITDIR --work-tree=$PRODUCT_DIR pull
-ssh $REMOTE_HOST sudo -u $PRODUCT_USER $ADMIN_SCRIPT restart
+PARAM='-al'
+ssh $REMOTE_HOST "sudo -u $PRODUCT_USER git --git-dir=$GITDIR --work-tree=$PRODUCT_DIR pull ; sudo -u $PRODUCT_USER $ADMIN_SCRIPT restart"
 
