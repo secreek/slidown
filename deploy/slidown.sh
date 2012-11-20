@@ -4,7 +4,7 @@ SCRIPT_NAME=slidown
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
-THIN_CONFIG=/home/slidown/slidown.yml
+THIN_CONFIG=/home/slidown/slidown/deploy/slidown.yml
 SOLIDOWN_CONFIG=/home/slidown/slidown/src/config.ru
 NOHUP=/usr/bin/nohup
 
