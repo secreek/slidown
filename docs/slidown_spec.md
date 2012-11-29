@@ -98,6 +98,17 @@ Any level of headings with payload are rendered as title, as payload rendered be
 ![image](url)
 ```
 
+**Note:** For solo image, render should use it's file name as title if heading is empty, unless an hidden title is explicitly specified.
+
+```
+# ![image1](url1) 
+#
+![image2](url2)
+# ![image3](url3) #
+```
+
+In the above example, Images1 and Images2 should be rendered with title, and Image3 shouldn't.
+
 #### Payloads
 
 Just use standard Markdown syntax. Common type of payload:
