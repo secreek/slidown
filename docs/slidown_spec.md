@@ -128,7 +128,7 @@ animation: slide-left;
 -->
 ```
 
-#### Hidden Title ⚒2
+#### Hidden Title ⚒²
 If the closing `#` exists, do not render title and use full screen space for payload content.
 
 ##### Normal Title:
@@ -140,7 +140,27 @@ If the closing `#` exists, do not render title and use full screen space for pay
 # Hello #
 ```
 
+#### Highlight ⚒
+Text enclosed by a pair of `#_` and `_#` **or ** a pair of `_#` and `#_` are converted to HTML 5 tag `<mark>` and `</mark>`.
+
+```
+Do not forget to buy #_milk_# today.
+```
+
+#### Speaker Note ⚒²
+
+A pair of dual-slash `//` inclose a piece of speaker note. Render should convert the pair of marker to HTML tag `<dfn>` and `</dfn>`.
+
+Speaker notes are removed by script before audience see the slide. *FIXME: Remove them on the sever side.*
+
+```
+// Do not show this line to the audiences //
+```
+
 #### Segments ⚒²
+
+*FIXME: This causes horizontal line rendered visually*
+
 A single slide can be divided into multiple stages by using segment symbol `- - - ` :
 
 ```
