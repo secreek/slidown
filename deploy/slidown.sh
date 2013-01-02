@@ -1,12 +1,13 @@
 #!/bin/sh
-THIN=/usr/local/bin/thin
+PWD=$(pwd "$(dirname $0)")
+THIN=$(which thin)
 SCRIPT_NAME=slidown
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
-THIN_CONFIG=/home/slidown/slidown/deploy/slidown.yml
-SOLIDOWN_CONFIG=/home/slidown/slidown/src/config.ru
-NOHUP=/usr/bin/nohup
+THIN_CONFIG=$PWD/deploy/slidown.yml
+SOLIDOWN_CONFIG=$PWD/src/config.ru
+NOHUP=$(which nohup)
 
 [ -x "$THIN" ] || exit 0
 echo $1
