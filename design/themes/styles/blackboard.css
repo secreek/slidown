@@ -1,0 +1,6 @@
+html, body {background: url('../images/blackboard.png') no-repeat center center fixed; background-size: cover}
+body {font-family: "Chalkduster";}
+#main {color: white; margin: auto;}
+div.centered{ display:block; position:absolute; top:30%; width:100%; margin: auto;}
+h1 {font-size: 100px; text-align: center}
+ul {font-size: 60px; margin: auto; width: 60%}

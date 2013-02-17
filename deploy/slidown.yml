@@ -1,0 +1,14 @@
+---
+chdir: /home/deathking/code/ruby/slidown/src
+environment: production
+address: 127.0.0.1
+port: 7788
+timeout: 30
+log: log/thin.log
+pid: tmp/pids/thin.pid
+max_conns: 1024
+max_persistent_conns: 100
+require: []
+wait: 30
+servers: 5
+daemonize: true
