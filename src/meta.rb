@@ -6,12 +6,14 @@ class MetaParser
     def initialize(str)
         @style = "slidown"
         @mathjax = false
+        style_regexp = /<!--\s+style:\s+(?<style>\w+)\s+-->/
+        mathjax_regexp = /<!--\s+use:\s+mathjax\s+-->/
         str.each_line do |line|
             break if line.start_with? "#"
             line = line.chomp
-            temp = line.match(/<!--\s+style:\s+(?<style>\w+)\s+-->/)
+            temp = line.match(style_regexp)
             @style = temp.nil? ? style : temp[:style]
-            @mathjax = true unless line.match(/<!--\s+use:\s+mathjax\s+-->/).nil?
+            @mathjax = true unless line.match(mathjax_regexp).nil?
         end
     end
 
