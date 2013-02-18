@@ -5,6 +5,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'rqrcode'
+require_relative 'meta'
 require_relative 'parser'
 require_relative 'builder'
 require_relative 'generator'
@@ -118,9 +119,10 @@ post '/:user/:topic/upload' do
     @file_content << blk
   end
 
+  meta = MetaParser.new(@file_content)
   parser = MarkdownParser.new(@file_content)
   builder = Builder.new parser.parse
-  generator = Generator.new base_path, @user, @topic, 'guide'
+  generator = Generator.new base_path, @user, @topic, 'guide', meta
   generator.generate builder.build_tree
 
   redirect "/#{@user}/#{@topic}"

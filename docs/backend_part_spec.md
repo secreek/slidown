@@ -1,6 +1,20 @@
+<!-- style: apple -->
+<!-- use: mathjax -->
 # 部分后端技术模块
 
 ## 模块简介
+
+## TeX公式
+
+$C_3^2$
+
+$$ \arcsin ^{ \alpha  }{ x } $$
+
+## 另一种方式
+
+\(\arcsin ^{ \alpha  }{ x }  \)
+
+\[ \arcsin ^{ \alpha  }{ x } \]
 
 ### 后端核心模块
 
