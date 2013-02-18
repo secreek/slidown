@@ -9,7 +9,7 @@ class MarkdownParser < DocumentParser
   def parse
     result = []
     current_node = nil
-    current_content = nil
+    current_content = []
 
     @source.each_line do |line|
       if line.strip.start_with? '#'
