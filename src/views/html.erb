@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/js/fowllow.js"></script>
     <script type="text/javascript" src="/js/slidown.js"></script>
     <% if @meta.enable_mathjax? %>
-        <script type="text/javascript" src="/js/MathJax.js?config=default"></script>
+        <%= %Q{<script type="text/javascript" src="/js/MathJax.js?config=default"></script>} %>
     <% end %>
     <link rel="stylesheet" type="text/css" href="/css/<%= @meta.style %>.css">
     <title><%= node.title %></title>

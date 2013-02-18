@@ -137,7 +137,7 @@ MathJax.Hub.Config({
   //  in the lower left-hand corner.  Set to "false" to prevent those messages (though
   //  file loading and other messages will still be shown).
   //
-  showProcessingMessages: true,
+  showProcessingMessages: false,
   
   //
   //  This value controls the verbosity of the messages in the lower left-hand corner.
@@ -145,7 +145,7 @@ MathJax.Hub.Config({
   //  "Loading..." and "Processing..." rather than showing the full file name and the
   //  percentage of the mathematics processed.
   //
-  messageStyle: "normal",
+  messageStyle: "none",
   
   //
   //  These two parameters control the alignment and shifting of displayed equations.
@@ -254,7 +254,7 @@ MathJax.Hub.Config({
     //  be able to handle that.
     //
     inlineMath: [
-//    ['$','$'],      // uncomment this for standard TeX math delimiters
+      ['$','$'],      // uncomment this for standard TeX math delimiters
       ['\\(','\\)']
     ],
 

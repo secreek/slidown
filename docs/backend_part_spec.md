@@ -1,5 +1,4 @@
 <!-- style: apple -->
-<!-- use: mathjax -->
 # 部分后端技术模块
 
 ## 模块简介
