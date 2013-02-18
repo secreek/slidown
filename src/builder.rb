@@ -1,4 +1,5 @@
-require 'markdown'
+#require 'markdown'
+require 'rdiscount'
 
 class Node
   attr_accessor :id, :title, :content, :level
@@ -13,7 +14,8 @@ class Node
   end
 
   def content
-    Markdown.new(@content).to_html if @content.strip.length > 0
+    #Markdown.new(@content).to_html if @content.strip.length > 0
+    RDiscount.new(@content).to_html if @content.strip.length > 0
   end
 
   def to_s
