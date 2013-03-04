@@ -1,7 +1,17 @@
-<!-- style: apple -->
+<!-- style: modern -->
+<!-- use: mathjax -->
 # 部分后端技术模块
 
 ## 模块简介
+
+
+`#include <stdio.h>
+
+int main
+{
+    printf("Hello, world!");
+    return 0;
+}`
 
 ## TeX公式
 
@@ -11,9 +21,8 @@ $$ \arcsin ^{ \alpha  }{ x } $$
 
 ## 另一种方式
 
-\(\arcsin ^{ \alpha  }{ x }  \)
-
-\[ \arcsin ^{ \alpha  }{ x } \]
+\\[ arcsin ^{ \alpha }{ x }  \\]
+\\( \arcsin ^{ \alpha }{ x } \\)
 
 ### 后端核心模块
 

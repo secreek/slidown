@@ -4,7 +4,7 @@ class MetaParser
     attr_reader :mathjax
 
     def initialize(str)
-        @style = "slidown"
+        @style = "slide"
         @mathjax = false
         style_regexp = /<!--\s+style:\s+(?<style>\w+)\s+-->/
         mathjax_regexp = /<!--\s+use:\s+mathjax\s+-->/
