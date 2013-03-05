@@ -33,3 +33,5 @@ document.onclick = function(e) {
 document.ontouchmove = function(e) {
 	nextPage();
 }
+
+console.log(document);
