@@ -22,11 +22,10 @@ Leap.loop({enableGestures : true}, function(frame) {
 });
 
 function swipePage() {
-  console.log(curGesutre);
   if (curGesutre > 0) {
     nextPage();
   } else if(curGesutre < 0) {
-    // simulate prev page
+    prevPage();
   }
 
   curGesutre = 0;
