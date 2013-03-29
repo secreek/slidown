@@ -38,16 +38,16 @@
 
 ## 元信息课扩展性
 
-+ 自制**slimark**以解析自定义语法；
-+ <kbd>use: plugin</kbd>启用其它插件；
 + <kbd>use: mathjax</kbd>启用**MathJax**支持书写公式；
++ <kbd>use: plugin</kbd>启用其它插件；
++ 自制**slimark**以解析自定义语法；
 
 ## 实验性功能
 
-+ 即时的Voting;
-+ PPT遥控器的支持； 
 + <kbd>follow.js</kbd>：聆听者/演讲者即时交互；
++ 即时的Voting;
 + 可嵌入Web元素：**Flash**、**Video**；
++ PPT遥控器的支持； 
 
 ## 可能添加特性
 

@@ -33,14 +33,22 @@ img, ol, ul, p {
 	display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
 	font-size: 2em;
 	font-size: 10vmin;
 	text-align: center;
 	white-space: nowrap;
-	margin: 0.5em auto 0.5em auto;
+	margin: 0.8em auto 0.5em auto;
 	text-shadow: 0.05em 0.05em 0.1em black;
 	width: 80%;
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    white-space: nowrap;
+    margin: 250px auto 0.5em auto;
+    text-shadow: 0.05em 0.05em 0.1em black;
 }
 
 h1:only-child, h2:only-child, h3:only-child, h4:only-child, h5:only-child, h6:only-child {
@@ -53,19 +61,20 @@ h1:only-child, h2:only-child, h3:only-child, h4:only-child, h5:only-child, h6:on
 }
 
 img {
-    max-height: 100%;
-	max-width: 100%;
-	max-height: 14em;
-	max-height: 70vh;
+    max-height: 350px;
+	max-width: 800px;
 	width: auto;
 	height: 14em;
 	height: 70vh;
-	box-shadow: 0.2em 0.2em 0.4em black;
+    margin: 5px auto 30px auto;
+
 }
 
 ol li, ul li {
 	font-size: 1.6em;
 	font-size: 1.6em;
+	line-height: 2.0em;
+	line-height: 2.0em;
 	padding: auto;
 	padding: auto;
 }
@@ -78,7 +87,19 @@ p {
     text-shadow: 0.05em 0.05em 0.1em black;
 }
 
+p strong {
+        color: red;
+        font-family: 'Mono';
+}
+
+p code {
+        color: blue;
+        font-size: 1.0em;
+}
+
 kbd {
+  color: black;
+  text-shadow: none;
   background-color: #e1f6ff;
   border-color: #45bbeb;
   border-style: outset;

@@ -5,13 +5,15 @@
 ## 模块简介
 
 
-`#include <stdio.h>
+```
+#include <stdio.h>
 
 int main
 {
     printf("Hello, world!");
     return 0;
-}`
+}
+```
 
 ## TeX公式
 

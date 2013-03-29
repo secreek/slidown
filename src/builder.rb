@@ -1,5 +1,6 @@
 require 'markdown'
 #require 'rdiscount'
+#require 'redcarpet'
 
 class Node
   attr_accessor :id, :title, :content, :level

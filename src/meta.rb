@@ -6,8 +6,10 @@ class MetaParser
     def initialize(str)
         @style = "slide"
         @mathjax = false
+        
         style_regexp = /<!--\s+style:\s+(?<style>\w+)\s+-->/
         mathjax_regexp = /<!--\s+use:\s+mathjax\s+-->/
+
         str.each_line do |line|
             break if line.start_with? "#"
             line = line.chomp
