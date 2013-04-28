@@ -1,3 +1,10 @@
+```
+<!---
+theme: dark;
+animation: slide-left;
+-->
+```
+
 # Slogan
 
 ## Picture
