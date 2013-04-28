@@ -9,7 +9,11 @@ class MarkdownParser < DocumentParser
   def parse
     result = []
     current_node = nil
+<<<<<<< HEAD
     current_content = []
+=======
+    current_content = nil
+>>>>>>> 210135939bde3e2531edbcac9726221b601344fc
 
     @source.each_line do |line|
       if line.strip.start_with? '#'

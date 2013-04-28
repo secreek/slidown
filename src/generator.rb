@@ -2,12 +2,19 @@ require 'erb'
 require 'fileutils'
 
 class Generator
+<<<<<<< HEAD
   def initialize base_path, user, topic, role, meta
+=======
+  def initialize base_path, user, topic, role
+>>>>>>> 210135939bde3e2531edbcac9726221b601344fc
     @role = role
     @base_path = base_path
     @user = user
     @topic = topic
+<<<<<<< HEAD
     @meta = meta
+=======
+>>>>>>> 210135939bde3e2531edbcac9726221b601344fc
     FileUtils.mkpath target_path
   end
 
