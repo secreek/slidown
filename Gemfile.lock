@@ -63,6 +63,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faraday
   markdown
   omniauth
   omniauth-github
