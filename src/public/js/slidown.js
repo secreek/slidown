@@ -32,6 +32,15 @@ document.onkeypress = function(e) {
   }
 };
 
+document.onkeydown = function(e) {
+  var e = window.event || e;
+  if (e.keyCode == 34 ) {
+      nextPage();
+  } else if (e.keyCode == 33) {
+      prevPage();
+  }
+};
+
 document.onclick = function(e) {
 	nextPage();
 };
