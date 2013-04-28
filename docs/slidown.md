@@ -2,6 +2,12 @@
 
 # Slidown
 
+## Slide with Markdown
+
++ 起源于邮件交流时的记号
++ **最流行**的互联网文本格式
++ 简单易学，**20分钟**内学会
+
 ## 幻灯片还是PPT？
 
 + **内容** 胜于 *形式*;
@@ -32,27 +38,27 @@
 
 ## 技术难点 
 
-+ Web前端技术：JS、CSS、HTML5；
-+ Web后端技术：Sinatra、thin；
-+ Parser设计：Slimark、Metamark；
++ 前端技术：JS、CSS、HTML5
++ 后端技术：sinatra、thin
++ Parser：SliMark、Metamark
 
-## 元信息课扩展性
+## 元信息可扩展性
 
 + 自制**slimark**以解析自定义语法；
-+ <kbd>use: plugin</kbd>启用其它插件；
-+ <kbd>use: mathjax</kbd>启用**MathJax**支持书写公式；
++ <kbd>use:plugin</kbd>启用其它插件；
++ <kbd>use:mathjax</kbd>启用**MathJax**支持书写公式；
 
 ## 实验性功能
 
-+ 即时的Voting;
-+ PPT遥控器的支持； 
-+ <kbd>follow.js</kbd>：聆听者/演讲者即时交互；
-+ 可嵌入Web元素：**Flash**、**Video**；
++ 即时的投票
++ PPT遥控器的支持 
++ <kbd>follow.js</kbd>聆听者/演讲者即时交互
++ 可嵌入Web元素：**Flash**、**Video**
 
 ## 可能添加特性
 
 + 从PPT导入；
-+ OpenID/OAuth认证；
++ 基本的实用特效；
 + 网络LaTeX编辑器（**Daum**）；
 + 网络所见即所得编辑器（**MaDe**）；
 
