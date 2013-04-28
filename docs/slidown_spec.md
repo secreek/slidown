@@ -187,9 +187,40 @@ Players:
 **Note:** A single slide may contain more than one side bar.
 
 #### Chart ⚒4
-*Note: Future document will explain this section*
 
 Draw simple charts in HTML 5:
+
+##### Simple Bar
+
+Syntax:
+
+```
+=> Label1 Value1 <=> label2 Value2 ~~Type
+```
+
+Value must be an integer ranging from `0` to `100`.
+
+Example:
+
+```
+=> China 65 <=> USA 72 <=> Russia 33 ~~Bar
+```
+
+The above Markdown should be translated to:
+
+```
+<div class="chart-bar">
+	<div class="bar-65>China</div>
+	<div class="bar-72>USA</div>
+	<div class="bar-33>Russia</div>
+</div>
+```
+
+Theme decides how to render the HTML visually.
+
+##### Multi-segment-bar
+
+*Note: Future document will explain this section*
 
 ```
 # Olympic Medals
@@ -202,6 +233,7 @@ In this example, numbers are extracted for column height, and country names are 
 - A plus symbol `+` between numbers indicate a **multi-segment** record
 
 Chart Type may be:
+
 - Bar
 - Pie
 - Histogram
