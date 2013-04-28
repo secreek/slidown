@@ -168,6 +168,19 @@ get '/' do
   redirect "/me/about"
 end
 
+get '/:user' do
+    @user = params[:user]
+
+    erb :user
+end
+
+get '/:user/' do
+    @user = params[:user]
+
+
+    redirect "/#{@user}"
+end
+
 get '/:user/:topic/upload' do
   @user = params[:user]
   @topic = params[:topic]
