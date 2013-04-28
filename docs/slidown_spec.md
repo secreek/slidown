@@ -122,11 +122,14 @@ Use standard Markdown syntax for:
 #### Meta Data
 Store / parse meta data at the very beginning of the document inside an HTML comment.
 
-```<!---
+```
+<!---
 theme: dark;
 animation: slide-left;
 -->
 ```
+
+The above Markdown should be translated to HTML meta tags in the `<head>` section.
 
 #### Hidden Title ⚒²
 If the closing `#` exists, do not render title and use full screen space for payload content.
@@ -239,6 +242,40 @@ Chart Type may be:
 - Histogram
 - Line
 - Table
+
+#### Checklist ⚒3
+
+Static checklist:
+
+```
+[X] Option 1
+[X] Option 2
+[ ] option 3
+```
+
+#### Interactive Voting ⚒4
+
+Single selection:
+
+```
+(?) Option 1
+(?) Option 2
+(?) Option 3
+```
+
+Multiple selections:
+
+```
+[?] Option 1
+[?] Option 2
+[?] option 3
+```
+
+**Note:**
+
+- Implementations are responsible to generate an unique ID for each client
+- Implementations decide how to prevent cheating
+- Themes decide hwo to render the controls, provide feedback and display result
 
 ### Rendering
 #### General Rules
