@@ -124,6 +124,7 @@ post '/:user/:topic/upload' do
   builder = Builder.new parser.parse
   generator = Generator.new base_path, @user, @topic, 'guide', meta
   generator.generate builder.build_tree
+  generator.gen_head
 
   redirect "/#{@user}/#{@topic}"
 end

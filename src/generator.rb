@@ -18,6 +18,14 @@ class Generator
     end
   end
 
+  def gen_head
+    erb = ERB.new open('views/head.erb').read
+    result_file = open("#{target_path}/head.html", 'w')
+    result_file.write erb.result(binding)
+    result_file.flush
+    result_file.close
+  end
+
   private
     def target_path
       "#{@base_path}/#{@user}/#{@topic}"
