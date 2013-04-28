@@ -210,9 +210,9 @@ The above Markdown should be translated to:
 
 ```
 <div class="chart-bar">
-	<div class="bar-65>China</div>
-	<div class="bar-72>USA</div>
-	<div class="bar-33>Russia</div>
+	<div class="bar-65">China</div>
+	<div class="bar-72">USA</div>
+	<div class="bar-33">Russia</div>
 </div>
 ```
 
