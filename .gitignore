@@ -14,7 +14,8 @@ test/tmp
 test/version_tmp
 tmp
 
-config/
+configs/
+deploy/
 # YARD artifacts
 .yardoc
 _yardoc

@@ -119,16 +119,10 @@ post '/:user/:topic/upload' do
     @file_content << blk
   end
 
-<<<<<<< HEAD
   meta = MetaParser.new(@file_content)
   parser = MarkdownParser.new(@file_content)
   builder = Builder.new parser.parse
   generator = Generator.new base_path, @user, @topic, 'guide', meta
-=======
-  parser = MarkdownParser.new(@file_content)
-  builder = Builder.new parser.parse
-  generator = Generator.new base_path, @user, @topic, 'guide'
->>>>>>> 210135939bde3e2531edbcac9726221b601344fc
   generator.generate builder.build_tree
 
   redirect "/#{@user}/#{@topic}"

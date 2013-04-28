@@ -27,7 +27,7 @@ class MarkdownParser < DocumentParser
           title = ""
         end
         current_node[:title] = title
-        current_content = [line]
+        current_content = (line.strip.end_with?("#") ? [] : [line])
       else
         current_content << line if line.strip.length > 0
       end
