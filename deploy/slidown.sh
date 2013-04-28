@@ -20,6 +20,26 @@ case "$1" in
 	restart)
 		$THIN -C $THIN_CONFIG -R $SOLIDOWN_CONFIG restart
 		;;
+    new)
+        if [ -f "$2" ]; then
+            echo "Can't build file, cuase the file has already exsits!"
+            exit 4
+        else
+            touch "$2"
+        fi
+        ;;
+    upload)
+        if [ ! -f "$2" ]; then
+            echo "The file dosen't exsits!"
+            exit 5
+        else
+
+        fi
+        ;;
+    list)
+        ;;
+    play)
+        ;;
 	*)
 		echo "Usage : $SCRIPT_NAME {start|stop|restart}" >&2
 		exit 3
