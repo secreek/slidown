@@ -51,8 +51,10 @@ class MarkdownParser < DocumentParser
     ary = exp.split(/[<]*=>/)
     ary.each do |e|
         next if e.empty?
-        e = e.strip.split(/[ ]+/)
-        html << sprintf("<div class=\"bar-%s\">%s</div>", e[1], e[0])
+        e.strip!
+        data = e.scan(/\d+/).last
+        term = e[0..-(data.size + 2)] # This is dirty but magic, you're not suppose to understand.
+        html << sprintf("<div class=\"bar-%s\">%s</div>", data, term)
     end
     html << "</div>"
   end
