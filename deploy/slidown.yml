@@ -1,4 +1,4 @@
-chdir: /home/deathking/code/ruby/slidown/src
+chdir: /home/deathking/code/ruby/github-slidown/src
 environment: production
 address: 127.0.0.1
 port: 7788

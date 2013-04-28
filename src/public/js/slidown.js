@@ -10,7 +10,7 @@ function nextPage() {
     //   base_path += first_child;
     // } else if(next_sib != "") {
     //   base_path += next_sib;
-	if (next !== "") {
+	if (next != "") {
       base_path += next;
     } else {
       alert('The Show has come to an end');
@@ -25,8 +25,10 @@ function prevPage () {
 
 document.onkeypress = function(e) {
   var e = window.event || e;
-  if (e.charCode == 32) { // space is pressed
+  if (e.charCode == 32 ) { // space is pressed
 	nextPage();
+  } else if (e.charCode == 98) { 
+    prevPage();   
   }
 };
 

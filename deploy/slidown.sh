@@ -4,8 +4,8 @@ SCRIPT_NAME=slidown
 # 根据实际部署情况修改
 # 缺省设置供测试使用
 
-THIN_CONFIG=/home/deathking/code/ruby/slidown/deploy/slidown.yml
-SOLIDOWN_CONFIG=/home/deathking/code/ruby/slidown/src/config.ru
+THIN_CONFIG=/home/deathking/code/ruby/github-slidown/deploy/slidown.yml
+SOLIDOWN_CONFIG=/home/deathking/code/ruby/github-slidown/src/config.ru
 NOHUP=/usr/bin/nohup
 
 [ -x "$THIN" ] || exit 0
