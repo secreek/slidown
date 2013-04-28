@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 <!-- style: modern -->
 <!-- use: mathjax -->
-=======
->>>>>>> 210135939bde3e2531edbcac9726221b601344fc
 # 部分后端技术模块
 
 ## 模块简介
 
-<<<<<<< HEAD
 
 ```
 #include <stdio.h>
@@ -30,8 +26,6 @@ $$ \arcsin ^{ \alpha  }{ x } $$
 \\[ arcsin ^{ \alpha }{ x }  \\]
 \\( \arcsin ^{ \alpha }{ x } \\)
 
-=======
->>>>>>> 210135939bde3e2531edbcac9726221b601344fc
 ### 后端核心模块
 
 - forerunner: 根据配置文件绘制网站地图
