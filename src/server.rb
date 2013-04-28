@@ -5,10 +5,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 require 'rqrcode'
-<<<<<<< HEAD
 require_relative 'meta'
-=======
->>>>>>> 210135939bde3e2531edbcac9726221b601344fc
 require_relative 'parser'
 require_relative 'builder'
 require_relative 'generator'

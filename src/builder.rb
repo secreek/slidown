@@ -1,9 +1,6 @@
 require 'markdown'
-<<<<<<< HEAD
 #require 'rdiscount'
 #require 'redcarpet'
-=======
->>>>>>> 210135939bde3e2531edbcac9726221b601344fc
 
 class Node
   attr_accessor :id, :title, :content, :level
@@ -19,10 +16,7 @@ class Node
 
   def content
     Markdown.new(@content).to_html if @content.strip.length > 0
-<<<<<<< HEAD
     #RDiscount.new(@content).to_html if @content.strip.length > 0
-=======
->>>>>>> 210135939bde3e2531edbcac9726221b601344fc
   end
 
   def to_s
