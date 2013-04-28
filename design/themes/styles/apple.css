@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 2em;
 	font-size: 10vmin;
 	text-align: center;
-	white-space: normal;
+	white-space: nowrap;
 	margin: 0.5em auto 0.5em auto;
 	text-shadow: 0.05em 0.05em 0.1em black;
 	width: 80%;
