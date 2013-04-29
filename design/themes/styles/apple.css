@@ -64,12 +64,10 @@ h1:only-child, h2:only-child, h3:only-child, h4:only-child, h5:only-child, h6:on
 }
 
 img {
+  width: auto;
   max-width: 80%;
   max-height: 14em;
   max-height: 70vh;
-  width: auto;
-  height: 14em;
-  height: 70vh;
   box-shadow: 0.2em 0.2em 0.4em black;
 }
 
