@@ -64,12 +64,10 @@ h1:only-child, h2:only-child, h3:only-child, h4:only-child, h5:only-child, h6:on
 }
 
 img {
+  width: auto;
   max-width: 80%;
   max-height: 14em;
   max-height: 70vh;
-  width: auto;
-  height: 14em;
-  height: 70vh;
   box-shadow: 0.2em 0.2em 0.4em black;
 }
 
@@ -84,4 +82,29 @@ p {
   font-size: 1.2em;
   font-size: 6vh;
   line-height: 130%;
+}
+
+#wrapper ul p {
+  width: 100%;
+}
+
+#wrapper ul li {
+  list-style-type: disc;
+  margin-left: 3em;
+}
+
+#wrapper .long-line {
+  font-size: 1.2em;
+  font-size:7.5vh;
+  line-height: 105%;
+  padding-left: 0.1em;
+  padding:0.5vh;
+}
+
+#wrapper .long-list {
+  font-size: 1.2em;
+  font-size: 7.5vh;
+  line-height: 105%;
+  padding-left: 0.1em;
+  padding: 0.5vh;
 }
