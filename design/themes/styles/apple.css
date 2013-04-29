@@ -77,3 +77,8 @@ p {
 	line-height: 130%;
 }
 
+#preloader {
+	position: absolute;
+	left: 8000px;
+	right: 5000px;
+}

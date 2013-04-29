@@ -242,14 +242,13 @@ get '/:user/:topic/:page' do
   user = params[:user]
   topic = params[:topic]
   page = params[:page]
+  partial = params[:partial] || false
 
   begin
-    File.read(File.join("#{base_path}/#{user}/#{topic}", "#{page}.html"))
+    File.read(File.join("#{base_path}/#{user}/#{topic}", (partial ? "partial_" : "") + "#{page}.html"))
   rescue Errno::ENOENT
     raise Sinatra::NotFound
   end
-
-
 end
 
 not_found do
