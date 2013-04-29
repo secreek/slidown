@@ -84,6 +84,10 @@ p {
   line-height: 130%;
 }
 
+#wrapper>p>img {
+  margin-top: 0.5em;
+}
+
 #wrapper ul p {
   width: 100%;
 }
