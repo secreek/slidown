@@ -15,6 +15,7 @@
     <% if @meta.enable_mathjax? %>
     <%= %Q{<script type="text/javascript" src="/js/MathJax.js?config=default"></script>} %>
     <% end %>
+    <link rel="stylesheet"type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/<%= @meta.style %>.css">
 </head>
 <body onload="pageLoaded()">
