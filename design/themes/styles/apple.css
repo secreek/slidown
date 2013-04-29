@@ -93,18 +93,11 @@ p {
   margin-left: 3em;
 }
 
-#wrapper .long-line {
-  font-size: 1.2em;
-  font-size:7.5vh;
-  line-height: 105%;
-  padding-left: 0.1em;
-  padding:0.5vh;
-}
-
 #wrapper .long-list {
   font-size: 1.2em;
-  font-size: 7.5vh;
+  font-size: 5vh;
   line-height: 105%;
   padding-left: 0.1em;
-  padding: 0.5vh;
+  padding-left: 0.5vh;
+  list-style-type: disc;
 }
