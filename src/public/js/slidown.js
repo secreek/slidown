@@ -1,21 +1,23 @@
 var hasNextPage = true;
 
 function pageLoaded() {
-  preloadNextPage();
-  window.addEventListener("popstate", function(e) {
-    console.log(location.pathname);
-  });
+  loadPage(true);
+  loadPage(false);
+
+  window.setTimeout(function() {
+    window.addEventListener("popstate", function(e) {
+      restorePrevPage();
+    }, false);
+  }, 1);
+
+  $("#slide-no").html(currentPageNumber());
 }
 
-function nextPageUrl(partial) {
+function genPageUrl(next, partial) {
   var full_path = window.location.href;
   var base_path = full_path.substring(0, full_path.lastIndexOf('/') + 1);
-  var next_number = currentPageNumber() + 1;
-
-  var postfix = "";
-  if(partial) {
-    postfix = "?partial=true";
-  }
+  var next_number = (next ? 1 : -1) + currentPageNumber();
+  var postfix = partial ? "?partial=true" : "";
 
   return base_path + next_number + postfix;
 }
@@ -25,42 +27,69 @@ function currentPageNumber() {
   return parseInt(full_path.substring(full_path.lastIndexOf('/') + 1), 10);
 }
 
-function preloadNextPage() {
-  $("#preloader").html("");
-  var new_path = nextPageUrl(true);
+function loadPage(next) {
+  var idName = next ? "#preloader" : "#prev_page";
+  $(idName).html("");
+  var target_path = genPageUrl(next, true);
   $.ajax({
-    url: new_path,
+    url: target_path,
     statusCode: {
       404: function() {
-        hasNextPage = false;
+        if(next === true) {
+          hasNextPage = false;
+        }
       }
     }
   }).done(function(data) {
-    $("#preloader").html(data);
+    $(idName).html(data);
   });
+}
+
+function swapHtml(next) {
+  if(next) {
+    $("#prev_page").html($("#wrapper").html());
+    $("#wrapper").html($("#preloader").html());
+    $("#preloader").html("");
+  } else {
+    $("#preloader").html($("#wrapper").html());
+    $("#wrapper").html($("#prev_page").html());
+    $("#prev_page").html("");
+  }
 }
 
 function nextPage() {
   if(!hasNextPage) { // no more page, turn to end page
     alert("The show has came to an end");
   } else {
-    if($("#preloader").html() === "" || currentPageNumber === 0) { // preloader is too slow
-      console.log(nextPageUrl(false));
-      window.location.href = nextPageUrl(false);
+    if(currentPageNumber() === 0 || $("#preloader").html() === "") { // preloader is too slow
+      window.location.href = genPageUrl(true, false);
     } else {
-      // move preloaded html into current wrapper
-      $("#wrapper").html($("#preloader").html());
+      swapHtml(true);
 
       // change the url with history api
-      history.pushState(null, null, nextPageUrl(false));
+      history.pushState(null, null, genPageUrl(true, false));
 
-      // now that the url has changed, we can continue preloading
-      preloadNextPage();
+      // update page number
+      $("#slide-no").html(currentPageNumber());
+
+      loadPage(true);
     }
   }
 }
 
-function prevPage () {
+function restorePrevPage() {
+  if($("#prev_page").html() !== "") {
+    swapHtml(false);
+
+    // update page number
+    console.log(currentPageNumber() +  " asdadsfasdfads");
+    $("#slide-no").html(currentPageNumber());
+
+    loadPage(false);
+  }
+}
+
+function prevPage() {
   history.popstate();
 }
 
