@@ -176,7 +176,6 @@ end
 get '/:user/' do
     @user = params[:user]
 
-
     redirect "/#{@user}"
 end
 

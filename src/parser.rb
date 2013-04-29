@@ -29,8 +29,8 @@ class MarkdownParser < DocumentParser
         current_node[:title] = title
         current_content = (line.strip.end_with?("#") ? [] : [line])
       else
-        # Chart-Bar PrrProcess
-        # See Transform rule in docs/slidown_spec.md
+        # Chart-Bar PreProcess
+        # See transform rules in docs/slidown_spec.md
         if line.start_with?("=>") && line.strip.end_with?("~~Bar")
             current_content += parse_chart(line)
         else
@@ -52,7 +52,7 @@ class MarkdownParser < DocumentParser
     ary.each do |e|
         next if e.empty?
         e.strip!
-        data = e.scan(/\d+/).last
+        data = e.scan(/\d+$/).last
         term = e[0..-(data.size + 2)] # This is dirty but magic, you're not suppose to understand.
         html << sprintf("<div class=\"bar-%s\">%s</div>", data, term)
     end
