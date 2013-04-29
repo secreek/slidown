@@ -4,6 +4,7 @@ require 'base64'
 require 'json'
 require 'net/http'
 require 'uri'
+require 'uuid'
 require 'rqrcode'
 require_relative 'meta'
 require_relative 'parser'
@@ -175,7 +176,6 @@ end
 
 get '/:user/' do
     @user = params[:user]
-
 
     redirect "/#{@user}"
 end

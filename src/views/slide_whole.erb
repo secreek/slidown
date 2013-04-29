@@ -15,11 +15,13 @@
     <% if @meta.enable_mathjax? %>
     <%= %Q{<script type="text/javascript" src="/js/MathJax.js?config=default"></script>} %>
     <% end %>
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/animation.css">
+    <link rel="stylesheet"type="text/css" href="/css/reset.css">
+    <link rel="stylesheet"type="text/css" href="/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="/css/<%= @meta.style %>.css">
 </head>
 <body onload="pageLoaded()">
+    <div id="slide" class="wrapper">
     <nav id="helpers">
       <button title="Previous slide" id="nav-prev" class="nav-prev">&lt;</button>
       <button title="Jump to a random slide" id="slide-no"></button>
@@ -34,5 +36,6 @@
     </div>
     <div id="prev_page"></div>
     <div id="preloader"></div>
+    </div><!-- #slide end -->
 </body>
 </html>

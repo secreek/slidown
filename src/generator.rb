@@ -8,6 +8,7 @@ class Generator
     @user = user
     @topic = topic
     @meta = meta
+    FileUtils.remove_dir target_path if File.directory? target_path
     FileUtils.mkpath target_path
   end
 
