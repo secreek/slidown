@@ -102,8 +102,9 @@ p {
   list-style-type: disc;
 }
 
-.voting-group {
+.voting-group div {
   width: 100%;
-  text-align: center;
+  margin-left: 8em;
+  line-height: 110%;
   font-size: 1.5em;
 }
