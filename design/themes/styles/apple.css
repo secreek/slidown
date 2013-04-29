@@ -101,3 +101,9 @@ p {
   padding-left: 0.5vh;
   list-style-type: disc;
 }
+
+.voting-group {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+}
