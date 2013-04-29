@@ -1,3 +1,8 @@
+<!---
+style: slide;
+animation: slide
+-->
+
 # Github Users Hackathon
 ## Poster ##
 ![Poster](http://drinkup.in/hit-201304/drinkup_em.svg)
@@ -25,10 +30,10 @@
 - No Client Instllation
 
 ## Improvements
-1. Markdown Parser
-2. Layouts and Transitions
-3. LeapMotion Controller
-4. Interactive Controls (Voting)
+- Markdown Parser
+- Layouts and Transitions
+- LeapMotion Controller
+- Interactive Controls (Voting)
 
 ## Complete Source of this Slideshow
 <pre><code>
@@ -67,7 +72,7 @@
 
 ## Team
 ![Team](http://slidown.getfiles.info/users/hf/team-slidown-1.jpg)
- 
+
 ## Rate this project
 [?] ★★★★★ Interesting!
 [?] ★★★★★ Inspiring!
