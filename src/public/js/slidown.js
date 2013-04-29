@@ -81,6 +81,7 @@ function nextPage() {
       history.pushState(null, null, genPageUrl(true, false));
 
       report();
+      document.body.scrollTop();
 
       // update page number
       $("#slide-no").html(currentPageNumber());
