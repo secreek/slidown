@@ -93,7 +93,7 @@ p {
   margin-left: 3em;
 }
 
-#wrapper .long-list {
+#wrapper .long-list li {
   font-size: 1.2em;
   font-size: 5vh;
   line-height: 105%;
