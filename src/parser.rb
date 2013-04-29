@@ -40,7 +40,7 @@ class MarkdownParser < DocumentParser
             current_content << parse_voting(line, voting_count)
             voting_count += 1
         else
-            current_content << "</div>" && voting_count = 0 if voting_count > 0
+            current_content << "</div><div class=\"vote-result\"></div>" && voting_count = 0 if voting_count > 0
             current_content << line if line.strip.length > 0
         end
       end
