@@ -80,6 +80,8 @@ function nextPage() {
       // change the url with history api
       history.pushState(null, null, genPageUrl(true, false));
 
+      report();
+
       // update page number
       $("#slide-no").html(currentPageNumber());
 
