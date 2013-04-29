@@ -35,55 +35,27 @@ animation: slide
 - LeapMotion Controller
 - Interactive Controls (Voting)
 
-## Complete Source of this Slideshow
+## Part Source of this Slideshow
 <pre>
-<h1 id="githubusershackathon">Github Users Hackathon</h1>
-
-<h2 id="poster">Poster</h2>
-
-<figure>
-<img src="http://drinkup.in/hit-201304/drinkup_em.svg" alt="Poster" />
-<figcaption>Poster</figcaption></figure>
-
-
-
-<h2 id="allhackathonprojects">All Hackathon Projects</h2>
-
-<ul>
-<li>Slidown</li>
-<li>Android Magicpad</li>
-<li>Hackatus!</li>
-<li>AC-Improved</li>
-<li>Statistics-Board</li>
-<li>EatWhat</li>
-<li>RPi-Maid</li>
-<li>GIS</li>
-<li>Drinkup</li>
-<li>AirDropEmergency</li>
-</ul>
-
-<h2 id="activeprojectsbygitcommits">Active Projects by Git Commits</h2>
-
-<p>=&gt;Slidown 30&lt;=&gt;Android Magicpad 30&lt;=&gt;Hackatus! 19&lt;=&gt;AC-Improved 17&lt;=&gt;Statistic-Board 15&lt;=&gt;EatWhat 10&lt;=&gt;RPi-Maid 7&lt;=&gt;GIS 5&lt;=&gt;DropEmergent 7~~Bar</p>
-
-<h2 id="slidown">Slidown</h2>
-
-<ul>
-<li>Compose slideshows with Markdown</li>
-<li>Focus on the content, not layouts</li>
-<li>Broadcast online</li>
-<li>Wireless control</li>
-<li>No Client Instllation</li>
-</ul>
-
-<h2 id="improvements">Improvements</h2>
-
-<ol>
-<li>Markdown Parser</li>
-<li>Layouts and Transitions</li>
-<li>LeapMotion Controller</li>
-<li>Interactive Controls (Voting)</li>
-</ol>
+<code># Github Users Hackathon</code>
+<code>## Poster ##</code>
+<code>![Poster](http://drinkup.in/hit-201304/drinkup_em.svg)</code>
+<code></code>
+<code>## All Hackathon Projects</code>
+<code>- Slidown</code>
+<code>- Android Magicpad</code>
+<code>- Hackatus!</code>
+<code>- AC-Improved</code>
+<code>- Statistics-Board</code>
+<code>- EatWhat</code>
+<code>- RPi-Maid</code>
+<code>- GIS</code>
+<code>- Drinkup</code>
+<code>- AirDropEmergency</code>
+<code></code>
+<code>## Active Projects by Git Commits
+=>Slidown 30<=>Android Magicpad 30<=>Hackatus! 19<=>AC-Improved 17<=>Statistic-Board 15<=>EatWhat 10<=>RPi-Maid 7<=>GIS 5<=>DropEmergent 7~~Bar</code>
+<code></code>
 </pre>
 
 ## Team
