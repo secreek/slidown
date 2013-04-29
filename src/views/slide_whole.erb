@@ -17,6 +17,15 @@
     <link rel="stylesheet" type="text/css" href="/css/<%= @meta.style %>.css">
 </head>
 <body>
+    <nav id="helpers">
+      <button title="Previous slide" id="nav-prev" class="nav-prev">⇽</button> 
+      <button title="Jump to a random slide" id="slide-no">1</button> 
+      <button title="Next slide" id="nav-next" class="nav-next">⇾</button>
+      <menu>
+        <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">LIST</button>
+        <button type="checkbox" data-command="help" title="View Help">?</button>
+      </menu>
+    </nav>
     <div id="wrapper">
         <%= node.content %>
     </div>
