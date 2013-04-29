@@ -77,6 +77,12 @@ p {
 	line-height: 130%;
 }
 
+#prev_page {
+	position: absolute;
+	left: 8000px;
+	right: 5000px;
+}
+
 #preloader {
 	position: absolute;
 	left: 8000px;

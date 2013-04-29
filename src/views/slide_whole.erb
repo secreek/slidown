@@ -15,12 +15,13 @@
     <% if @meta.enable_mathjax? %>
     <%= %Q{<script type="text/javascript" src="/js/MathJax.js?config=default"></script>} %>
     <% end %>
+    <link rel="stylesheet"type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/<%= @meta.style %>.css">
 </head>
 <body onload="pageLoaded()">
     <nav id="helpers">
       <button title="Previous slide" id="nav-prev" class="nav-prev">&lt;</button>
-      <button title="Jump to a random slide" id="slide-no">1</button>
+      <button title="Jump to a random slide" id="slide-no"></button>
       <button title="Next slide" id="nav-next" class="nav-next">&gt;</button>
       <menu>
         <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">LIST</button>
@@ -31,7 +32,6 @@
         <%= node.content %>
     </div>
     <div id="prev_page"></div>
-    <div id="preloader">
-    </div>
+    <div id="preloader"></div>
 </body>
 </html>
