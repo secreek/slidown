@@ -28,6 +28,9 @@ function currentPageNumber() {
 }
 
 function loadPage(next) {
+  if(!next && currentPageNumber() === 1) {
+    return;
+  }
   var idName = next ? "#preloader" : "#prev_page";
   $(idName).html("");
   var target_path = genPageUrl(next, true);
