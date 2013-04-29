@@ -1,5 +1,12 @@
 var hasNextPage = true;
 
+function attachAnim() {
+  $("#anim-layer").remove();
+  $("body").append('<div id="anim-layer"></div>');
+  $("#anim-layer").html($("#wrapper").html());
+  $("#anim-layer").attr("class", "apply-animation");
+}
+
 function pageLoaded() {
   loadPage(true);
   loadPage(false);
@@ -28,6 +35,9 @@ function currentPageNumber() {
 }
 
 function loadPage(next) {
+  if(!next && currentPageNumber() === 1) {
+    return;
+  }
   var idName = next ? "#preloader" : "#prev_page";
   $(idName).html("");
   var target_path = genPageUrl(next, true);
@@ -46,6 +56,7 @@ function loadPage(next) {
 }
 
 function swapHtml(next) {
+  attachAnim();
   if(next) {
     $("#prev_page").html($("#wrapper").html());
     $("#wrapper").html($("#preloader").html());
@@ -82,7 +93,6 @@ function restorePrevPage() {
     swapHtml(false);
 
     // update page number
-    console.log(currentPageNumber() +  " asdadsfasdfads");
     $("#slide-no").html(currentPageNumber());
 
     loadPage(false);

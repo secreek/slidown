@@ -1,7 +1,7 @@
 ```
 <!---
 theme: slide;
-animation: slide-left;
+animation: fade;
 -->
 ```
 
