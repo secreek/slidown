@@ -31,7 +31,7 @@ div.centered h1 {
     background-color: inherit;
 }
 
-h1 {
+#login h1 {
     font-family: "Lucida Calligraphy", "Gabriola", "Curlz MT";
     font-size: 60px;
     color: white;
