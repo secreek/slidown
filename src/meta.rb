@@ -1,26 +1,47 @@
+# This is a meta infomation parser for slidown
+# 
+# Author: DeathKing
+# License: MIT
+
+
 class MetaParser
 
-    attr_reader :style
-    attr_reader :mathjax
+    attr_reader     :proper
+    REGEXPS = {
+        animation: /\s+animation:\s+(?<animation>\w+)\s+/,
+        style:     /\s+style:\s+(?<style>\w+)\s+/,
+        theme:     /\s+theme:\s+(?<theme>\w+)\s+/,
+        use:       /\s+use:\s+(?<plugin>\w+)\s+/,
+        meta:      /^<!--[\w|\d|\s]+-->/m,
+    }
 
     def initialize(str)
-        @style = "slide"
-        @mathjax = false
-        
-        style_regexp = /<!--\s+style:\s+(?<style>\w+)\s+-->/
-        mathjax_regexp = /<!--\s+use:\s+mathjax\s+-->/
+        @proper = {
+            style: "slide",
+            theme: "slide",
+            use: [],
+        }
+        parse_block(str.scan(REGEXPS[:meta]))
+        self
+    end
 
-        str.each_line do |line|
-            break if line.start_with? "#"
-            line = line.chomp
-            temp = line.match(style_regexp)
-            @style = temp.nil? ? style : temp[:style]
-            @mathjax = true unless line.match(mathjax_regexp).nil?
-        end
+    def parse_block(string_block)
+      return nil unless string_block.respond_to? :split
+      string_block.split(/[;|\n|\r]/).each do |line|
+        line = line.chomp!.strip!
+        line.match(REGEXPS[:animation]) { |m| @porper[:animation] = m[1] }
+        line.match(REGEXPS[:theme]) { |m| @proper[:theme] = m[1] }
+        line.match(REGEXPS[:style]) { |m| @proper[:style] = m[1] }
+        line.match(REGEXPS[:use])   { |m| @proper[:use] << m[1] }
+      end
     end
 
     def enable_mathjax?
-        return @mathjax
+        return @proper[:use].include? /mathjax/i
+    end
+
+    def method_missing(name, *arg)
+        @proper[name.to_s.downcase.to_sym]
     end
 
 end
