@@ -31,7 +31,7 @@
 4. Interactive Controls (Voting)
 
 ## Complete Source of this Slideshow
-```
+<pre><code>
 # Github Users Hackathon
 ## Poster ##
 ![Poster](http://drinkup.in/hit-201304/drinkup_em.svg)
@@ -63,7 +63,7 @@
 2. Layouts and Transitions
 3. LeapMotion Controller
 4. Interactive Controls (Voting)
-```
+</code></pre>
 
 ## Team
 ![Team](http://slidown.getfiles.info/users/hf/team-slidown-1.jpg)
