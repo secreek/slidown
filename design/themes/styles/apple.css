@@ -83,3 +83,28 @@ p {
   font-size: 6vh;
   line-height: 130%;
 }
+
+#wrapper ul p {
+  width: 100%;
+}
+
+#wrapper ul li {
+  list-style-type: disc;
+  margin-left: 3em;
+}
+
+#wrapper .long-line {
+  font-size: 1.2em;
+  font-size:7.5vh;
+  line-height: 105%;
+  padding-left: 0.1em;
+  padding:0.5vh;
+}
+
+#wrapper .long-list {
+  font-size: 1.2em;
+  font-size: 7.5vh;
+  line-height: 105%;
+  padding-left: 0.1em;
+  padding: 0.5vh;
+}
