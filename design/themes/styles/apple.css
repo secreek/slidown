@@ -93,11 +93,17 @@ p {
   margin-left: 3em;
 }
 
-#wrapper .long-list {
+#wrapper .long-list li {
   font-size: 1.2em;
   font-size: 5vh;
   line-height: 105%;
   padding-left: 0.1em;
   padding-left: 0.5vh;
   list-style-type: disc;
+}
+
+.voting-group {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
 }
