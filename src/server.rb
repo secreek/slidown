@@ -68,7 +68,7 @@ use Rack::Session::Cookie
   %w(get post).each do |method|
     send(method, "/auth/:provider/callback") do
 
-    #TODO: Add the route or anything you want   
+    #TODO: Add the route or anything you want
     <<-HTML
         <h1>#{params[:provider]}</h1>
         <pre>#{JSON.pretty_generate(env['omniauth.auth'])}</pre>
@@ -89,7 +89,7 @@ use Rack::Session::Cookie
   end
 
   get '/protected' do
-    #TODO: Add the NOT Authorized 
+    #TODO: Add the NOT Authorized
     throw(:halt, [401, "Not authorized\n"]) unless session[:authenticated]
     erb %Q{
       <pre>#{request.env['omniauth.auth'].to_json}</pre><hr>
@@ -124,7 +124,6 @@ post '/:user/:topic/upload' do
   builder = Builder.new parser.parse
   generator = Generator.new base_path, @user, @topic, 'guide', meta
   generator.generate builder.build_tree
-  generator.gen_head
 
   redirect "/#{@user}/#{@topic}"
 end
@@ -211,7 +210,7 @@ get '/:user/:topic/welcome' do
   #http://www.qrcode.com/en/vertable1.html
   #Version 6 Level L Support 1088bits
   #
-  #TODO:Use the shorten url  to fix this problem 
+  #TODO:Use the shorten url  to fix this problem
   begin
     @qr = RQRCode::QRCode.new(@qrcode_url,:size => 6,:level=> :l)
     erb :welcome
@@ -219,7 +218,7 @@ get '/:user/:topic/welcome' do
     "Your url is too long"
   end
 
-  
+
 
 end
 
@@ -243,7 +242,7 @@ get '/:user/:topic/:page' do
   user = params[:user]
   topic = params[:topic]
   page = params[:page]
-  
+
   begin
     File.read(File.join("#{base_path}/#{user}/#{topic}", "#{page}.html"))
   rescue Errno::ENOENT

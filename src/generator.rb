@@ -18,24 +18,24 @@ class Generator
     end
   end
 
-  def gen_head
-    erb = ERB.new open('views/head.erb').read
-    result_file = open("#{target_path}/head.html", 'w')
+  private
+  def target_path
+    "#{@base_path}/#{@user}/#{@topic}"
+  end
+
+  def gen_node node
+    # Generate the whole page
+    erb = ERB.new open('views/slide_whole.erb').read
+    result_file = open("#{target_path}/#{node.id}.html", 'w')
+    result_file.write erb.result(binding)
+    result_file.flush
+    result_file.close
+
+    # Generate partial page for history api
+    erb = ERB.new open('views/slide_content.erb').read
+    result_file = open("#{target_path}/partial_#{node.id}.html", 'w')
     result_file.write erb.result(binding)
     result_file.flush
     result_file.close
   end
-
-  private
-    def target_path
-      "#{@base_path}/#{@user}/#{@topic}"
-    end
-
-    def gen_node node
-      erb = ERB.new open('views/html.erb').read
-      result_file = open("#{target_path}/#{node.id}.html", 'w')
-      result_file.write erb.result(binding)
-      result_file.flush
-      result_file.close
-    end
 end
