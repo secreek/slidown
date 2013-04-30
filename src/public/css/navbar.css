@@ -67,7 +67,7 @@ menu {
 }
 
 
-
+/* FIXME: the chart css shouldn't be here. could someone reorganize all of the css files?*/
 /* chart-bar */
 .chart-bar {
   border-left: 5px solid green;
@@ -80,6 +80,7 @@ menu {
   padding: 0.5em;
   background-color: green;
   color: white;
+  white-space: nowrap;
 }
 .bar-0 {width:0%;}
 .bar-1 {width:1%;}
