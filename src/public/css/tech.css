@@ -1,0 +1,112 @@
+body { font-size: 1em;}
+
+@media (min-height: 333px) {
+    html { font-size: 16px; }
+}
+
+@media (min-height: 666px) {
+    html { font-size: 33px; }
+}
+
+@media (min-height: 1000px) {
+    html { font-size: 50px; }
+}
+
+* {
+	margin: 0; padding: 0
+}
+
+html, body {
+	background-color: black;
+	background: url('/img/modern.gif');
+}
+
+body {
+	font-family: "Monaco", sans-serif;
+	color: white;
+	font-size: 5vh;
+}
+
+img, ol, ul, p {
+	margin: auto;
+	width: 85%;
+	display: block;
+}
+
+h2, h3, h4, h5, h6 {
+	font-size: 2em;
+	font-size: 10vmin;
+	text-align: center;
+	white-space: nowrap;
+	margin: 0.8em auto 0.5em auto;
+	text-shadow: 0.05em 0.05em 0.1em black;
+	width: 80%;
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    white-space: nowrap;
+    margin: 250px auto 0.5em auto;
+    text-shadow: 0.05em 0.05em 0.1em black;
+}
+
+h1:only-child, h2:only-child, h3:only-child, h4:only-child, h5:only-child, h6:only-child {
+	font-size: 2.5em;
+	font-size: 12.5vmin;
+	position: relative;
+	top: 2em;
+	top: 20vh;
+	white-space: normal;
+}
+
+img {
+    max-height: 350px;
+	max-width: 800px;
+	width: auto;
+	height: 14em;
+	height: 70vh;
+    margin: 5px auto 30px auto;
+
+}
+
+ol li, ul li {
+	font-size: 1.6em;
+	font-size: 1.6em;
+	line-height: 2.0em;
+	line-height: 2.0em;
+	padding: auto;
+	padding: auto;
+}
+
+p {
+	font-size: 1.2em;
+	font-size: 6vh;
+	font-family: serif;
+	line-height: 130%;
+    text-shadow: 0.05em 0.05em 0.1em black;
+}
+
+p strong {
+        color: red;
+        font-family: 'Mono';
+}
+
+p code {
+        color: blue;
+        font-size: 1.0em;
+}
+
+kbd {
+  color: black;
+  text-shadow: none;
+  background-color: #e1f6ff;
+  border-color: #45bbeb;
+  border-style: outset;
+  border-width: 0.2em;
+  font-size: 0.8em;
+  padding: 0.1em 0.4em;
+  margin-right: 0.2em;
+  white-space: nowrap;
+  font-family: "Lucida Console", monospace
+}

@@ -1,5 +1,5 @@
 var http = new XMLHttpRequest();
-var default_endpoint = "http://fowllow.com/"
+var default_endpoint = "http://fowllow.com/";
 
 function get_meta(name)
  {

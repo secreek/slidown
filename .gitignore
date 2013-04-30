@@ -14,9 +14,12 @@ test/tmp
 test/version_tmp
 tmp
 
+configs/
+deploy/
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
 src/file_repo/
 .DS_Store
+*.backup
