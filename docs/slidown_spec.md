@@ -134,10 +134,10 @@ Use standard Markdown syntax for:
 Store / parse meta data at the very beginning of the document inside an HTML comment.
 
 ```
-<!---
-theme: dark;
-animation: slide-left;
--->
+    <!---
+    theme: dark;
+    animation: slide-left;
+    -->
 ```
 
 The above Markdown should be translated to HTML meta tags in the `<head>` section.
@@ -223,11 +223,11 @@ Example:
 The above Markdown should be translated to:
 
 ```
-<div class="chart-bar">
-	<div class="bar-65">China</div>
-	<div class="bar-72">USA</div>
-	<div class="bar-33">Russia</div>
-</div>
+    <div class="chart-bar">
+        <div class="bar-65">China</div>
+        <div class="bar-72">USA</div>
+        <div class="bar-33">Russia</div>
+    </div>
 ```
 
 Theme decides how to render the HTML visually.
@@ -286,7 +286,7 @@ Multiple selections:
 
 - Implementations are responsible to generate an unique ID for each client
 - Implementations decide how to prevent cheating
-- Themes decide hwo to render the controls, provide feedback and display result
+- Themes decide how to render the controls, provide feedback and display result
 
 ### Rendering
 #### General Rules
