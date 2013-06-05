@@ -55,8 +55,19 @@ end
 class ListEntity < SlideEntity
   attr_accessor :items
 
-  def initialize items
-    @items = items
+  def initialize
+    @html = []
+  end
+
+  def add_item item
+
+    flag  = ""
+    accum = 0
+    item  = item.scan(/[\+\-\d]\.*\s*(?<term>.+)/).last.first
+    item.each_char {|c| accum += c.bytesize > c.size ? 2 : 1}
+    flag  = " class=\"long-line\"" if accum > 20
+    @html << sprintf("<li%s>%s</li>", flag, item) 
+
   end
 
   def to_s
@@ -64,11 +75,8 @@ class ListEntity < SlideEntity
   end
 
   def render
-    item_list = ""
-    @items.each do |item|
-      item_list << "<li>#{item}</li>"
-    end
-    "<ul>#{item_list}</ul>"
+    flag = @html.size > 5 ? " class=\"long-list\"" : ""
+    (["<ul#{flag}>"] + @html + ["</ul>"]).join("\n")
   end
 end
 
@@ -89,7 +97,7 @@ class ChartEntity < SlideEntity
   end
 
   def render
-    @html.join("\n").to_s
+    @html.join("\n")
   end
 
 end
@@ -97,11 +105,22 @@ end
 
 class VoteEntity < SlideEntity
 
-  def initialize
+  def initialize vid
+    @vid   = vid
+    @uuid  = UUID.new.generate
+    @count = 0
+    @html  = ["<div class=\"voting-group\">"]
+  end
+
+  def add_item item
+    type, term = item[0..2], item[3..-1].strip
+    type = type == "(?)" ? "radio" : "checkbox"
+    id = sprintf("%s-%d-%d", @uuid, @vid, @count)
+    @html << sprintf("<div><span class=\"%s\"></span><input type=\"%s\" value=\"%s\">%s</div>", id, type, id, term)
+    @count += 1
   end
 
   def render
+    (@html + ["</div>"]).join("\n")
   end
 end
-
-puts ChartEntity.new("=>Slidown 30<=>Magic Pad 40<=>Default asdu 92 80~~Bar").render
