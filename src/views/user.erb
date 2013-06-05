@@ -1,7 +1,14 @@
-This is <% @user %>'s Slide shows.
+<body>
+  <h1>This is <%= @user %>'s Slide shows.</h1>
 
-<% path = File.expand_path('.');
-   Dir.entries("#{path}/file_repo/#{@user}/").each do |e|
-%>
-   <p><%= e.inspect if e != "." || e != ".." %></p>
+<% Dir.entries(@path).each do |e|%>
+   <%=
+        if e.to_s[0] != '.'
+          "<p><a href=\"/#{@user}/#{e.to_s}\">#{e.to_s}</a></p>"
+        else
+          ""
+        end
+    %>
 <% end %>
+
+</body>

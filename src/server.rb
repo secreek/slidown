@@ -171,8 +171,13 @@ end
 
 get '/:user' do
     @user = params[:user]
-
-    erb :user
+    @path = File.expand_path(".") + "/file_repo/#{@user}"
+    puts @path
+    unless Dir.exist?(@path)
+      erb :user_not_found
+    else
+      erb :user
+    end
 end
 
 get '/:user/' do

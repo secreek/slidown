@@ -35,7 +35,6 @@ class MetaParser
       return nil unless string_block.respond_to? :split
       string_block.split(/[;|\n|\r]/).each do |line|
         line = line.chomp.strip
-        #puts line
         line.match(REGEXPS[:animation]) { |m| @proper[:animation] = m[1] }
         line.match(REGEXPS[:theme]) { |m| @proper[:theme] = m[1] }
         line.match(REGEXPS[:style]) { |m| @proper[:style] = m[1] }
