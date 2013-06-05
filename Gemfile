@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'thin'
 gem 'uuid'
+gem 'shotgun'
 gem 'sinatra'
 gem 'rqrcode'
 gem 'markdown'

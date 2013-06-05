@@ -33,25 +33,25 @@ class MarkdownParser < DocumentParser
         current_node[:title] = title
         current_content = (line.strip.end_with?("#") ? [] : [line])
       else
-        # Chart-Bar PreProcess
-        # See transform rules in docs/slidown_spec.md
         if line.start_with?("=>") && line.strip.end_with?("~~Bar")
-            current_content += parse_chart(line)
+	  # Process the Chart in entity.rb 
+          # See transform rules in docs/slidown_spec.md
+       	  current_content += ChartEntity.new(line).render
         elsif line.strip.start_with?("(?)") ||
               line.strip.start_with?("[?]")
-            current_content << "<div class=\"voting-group\">" if voting_count == 0
-            current_content << parse_voting(line, voting_count, voting_id)
-            voting_count += 1
+          current_content << "<div class=\"voting-group\">" if voting_count == 0
+          current_content << parse_voting(line, voting_count, voting_id)
+          voting_count += 1
         elsif line.strip.match (/[\+\-][\s]+./)
-            @parse_block[:list] << line.strip
+          @parse_block[:list] << line.strip
         else
-            if voting_count > 0
-                current_content << "</div>" 
-                voting_count = 0 
-                voting_id += 1
-            end
-            current_content << parse_list.clone unless @parse_block[:list].empty?
-            current_content << line if line.strip.length > 0
+          if voting_count > 0
+              current_content << "</div>" 
+              voting_count = 0 
+              voting_id += 1
+          end
+          current_content << parse_list.clone unless @parse_block[:list].empty?
+          current_content << line if line.strip.length > 0
         end
       end
     end

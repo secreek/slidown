@@ -72,15 +72,30 @@ class ListEntity < SlideEntity
   end
 end
 
-class ChartEntity < SlidownEntity
+class ChartEntity < SlideEntity
 
-  def initialize
+  def initialize line
+
+    @html = ["<div class=\"chart-bar\">"]
+    line.gsub("~~Bar", "").split(/[<]*=>/).each { |e|
+      next if e.empty?
+      e.strip!
+      data = e.scan(/\d+$/).last
+      term = e[0..-(data.size + 2)]
+      @html << sprintf("<div class=\"bar-%s\">%s</div>", data, term)
+    }
+    @html << "</div>"
+
+  end
+
+  def render
+    @html.join("\n").to_s
   end
 
 end
 
 
-class VoteEntity < SlidownEntity
+class VoteEntity < SlideEntity
 
   def initialize
   end
@@ -89,3 +104,4 @@ class VoteEntity < SlidownEntity
   end
 end
 
+puts ChartEntity.new("=>Slidown 30<=>Magic Pad 40<=>Default asdu 92 80~~Bar").render
