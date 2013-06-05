@@ -1,1 +1,7 @@
-DeathKing's Ghost is everywhere!
+This is <% @user %>'s Slide shows.
+
+<% path = File.expand_path('.');
+   Dir.entries("#{path}/file_repo/#{@user}/").each do |e|
+%>
+   <p><%= e.inspect if e != "." || e != ".." %></p>
+<% end %>

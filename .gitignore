@@ -23,3 +23,6 @@ doc/
 src/file_repo/
 .DS_Store
 *.backup
+
+# vim swap
+*.swp

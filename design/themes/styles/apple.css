@@ -12,7 +12,9 @@
   src: local('Expletus Sans'), local('ExpletusSans'), url('ExpletusSans.woff') format('woff');
 }
 
-
+::-webkit-scrollbar {
+  display:none
+}
 
 @media (min-height: 333px) {
   html { font-size: 16px; }

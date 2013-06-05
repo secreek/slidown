@@ -71,3 +71,21 @@ class ListEntity < SlideEntity
     "<ul>#{item_list}</ul>"
   end
 end
+
+class ChartEntity < SlidownEntity
+
+  def initialize
+  end
+
+end
+
+
+class VoteEntity < SlidownEntity
+
+  def initialize
+  end
+
+  def render
+  end
+end
+
