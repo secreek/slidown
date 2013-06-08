@@ -164,6 +164,8 @@ post '/api/:user/:topic/upload' do
   'Success!'
 end
 
+set :erb, :trim => '-'
+
 # The default homepage was redirect to /about/me
 get '/' do
   redirect "/me/about"

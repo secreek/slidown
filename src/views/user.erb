@@ -1,14 +1,39 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <script src="js/modernizr.custom.js"></script>
+</head>
 <body>
-  <h1>This is <%= @user %>'s Slide shows.</h1>
 
-<% Dir.entries(@path).each do |e|%>
-   <%=
-        if e.to_s[0] != '.'
-          "<p><a href=\"/#{@user}/#{e.to_s}\">#{e.to_s}</a></p>"
-        else
-          ""
-        end
-    %>
-<% end %>
+	<div class="container">
+		<!-- topbari here -->
+		<header class="claerfix">
+			<h1>Slidown<span>Build Slide with Markdown!</span></h1>
+		</header>
+		<div class="main">
+			<p></br><%- Dir.entries(@path).each do |e| -%>
+			<%- if e.to_s[0] != '.' -%>
+					  <%= "<a href=\"/#{@user}/#{e.to_s}\">#{e.to_s}</a></br>\n" %>
+			<%- end -%>
+			<%- end -%></p>
+			
+		<div class="side">	
+  <nav id="dr-menu" class="dr-menu">
+      <div class="dr-trigger"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">My Zone</a></div>
+      <ul>
+        <li><a class="dr-icon dr-icon-user" href="#"><%= @user %></a></li>
+        <li><a class="dr-icon dr-icon-camera" href="#">My Slide</a></li>
+        <li><a class="dr-icon dr-icon-heart" href="#">Favo Slide</a></li>
+        <li><a class="dr-icon dr-icon-bullhorn" href="#">Draft Slide</a></li>
+        <li><a class="dr-icon dr-icon-download" href="#">Management</a></li>
+        <li><a class="dr-icon dr-icon-settings" href="#">Settings</a></li>
+        <li><a class="dr-icon dr-icon-switch" href="#">Logout</a></li>
+    </ul>
+</nav>
+</div>
+</div>
+</div>
+<script src="js/ytmenu.js"></script>
+
 
 </body>
