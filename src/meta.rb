@@ -1,9 +1,3 @@
-# This is a meta infomation parser for slidown
-# 
-# Author: DeathKing
-# License: MIT
-
-
 class MetaParser
 
     attr_reader     :proper

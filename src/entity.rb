@@ -16,7 +16,7 @@ class TitleEntity < SlideEntity
   end
 
   def render
-    "<h1>#{@title}</h1>"
+    "<h1>#@title</h1>"
   end
 end
 
@@ -32,7 +32,7 @@ class TextEntity < SlideEntity
   end
 
   def render
-    "<p>#{@text}</p>"
+    "<p>#@text</p>"
   end
 end
 
@@ -48,7 +48,7 @@ class ImgEntity < SlideEntity
   end
 
   def render
-    "<img src='#{@img_url}'></img>"
+    "<img src='#@img_url'></img>"
   end
 end
 
