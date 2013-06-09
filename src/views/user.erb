@@ -1,7 +1,17 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
   <link rel="stylesheet" type="text/css" href="css/component.css" />
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
   <script src="js/modernizr.custom.js"></script>
+  <script>
+      function showMySlide() {
+          $.get("/<%= @user %>/slide",
+          function(data) {
+              $("#content").html(data);
+          },
+          'text');
+      }
+  </script>
 </head>
 <body>
 
@@ -10,23 +20,24 @@
 		<header class="claerfix">
 			<h1>Slidown<span>Build Slide with Markdown!</span></h1>
 		</header>
-		<div class="main">
+        <div class="main">
+            <div id='content'>
 			<p></br><%- Dir.entries(@path).each do |e| -%>
        <%- if e.to_s[0] != '.' -%>
        <%= "<a href=\"/#{@user}/#{e.to_s}\">#{e.to_s}</a></br>\n" %>
        <%- end -%>
-       <%- end -%></p>
+   <%- end -%></p></div>
 
        <div class="side">
         <nav id="dr-menu" class="dr-menu dr-menu-open">
           <div class="dr-trigger"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">My Zone</a></div>
           <ul>
             <li><a class="dr-icon dr-icon-user" href="#"><%= @user %></a></li>
-            <li><a class="dr-icon dr-icon-camera" href="#">My Slide</a></li>
-            <li><a class="dr-icon dr-icon-heart" href="#">Favo Slide</a></li>
+            <li><a class="dr-icon dr-icon-camera" href="#content" onclick="showMySlide()">My Slide</a></li>
+            <li><a class="dr-icon dr-icon-heart" href="#new-slide">Favo Slide</a></li>
             <li><a class="dr-icon dr-icon-bullhorn" href="#">Draft Slide</a></li>
             <li><a class="dr-icon dr-icon-download" href="#">Management</a></li>
-            <li><a class="dr-icon dr-icon-settings" href="#">Settings</a></li>
+            <li><a class="dr-icon dr-icon-settings" href="#setting">Settings</a></li>
             <li><a class="dr-icon dr-icon-switch" href="#">Logout</a></li>
           </ul>
         </nav>

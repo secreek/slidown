@@ -1,0 +1,6 @@
+<p></br>
+<%- Dir.entries(@path).each do |e| -%>
+       <%- if e.to_s[0] != '.' -%>
+       <%= "<a href=\"/#{@user}/#{e.to_s}\">#{e.to_s}</a></br>\n" %>
+       <%- end -%>
+   <%- end -%></p>

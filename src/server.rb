@@ -174,11 +174,20 @@ end
 get '/:user' do
     @user = params[:user]
     @path = File.expand_path(".") + "/file_repo/#{@user}"
-    puts @path
     unless Dir.exist?(@path)
       erb :user_not_found
     else
       erb :user
+    end
+end
+
+get '/:user/slide' do
+    @user = params[:user]
+    @path = File.expand_path(".") + "/file_repo/#@user"
+    unless Dir.exist? @path
+        erb :user_not_found
+    else
+        erb :slide_list
     end
 end
 
