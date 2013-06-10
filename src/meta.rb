@@ -12,6 +12,7 @@ class MetaParser
         @proper = {
             style: "slide",
             theme: "slide",
+	    animation: "fade",
             use: [],
         }
         strblk = ""
