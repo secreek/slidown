@@ -1,0 +1,133 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.3.4)
+    bcrypt-ruby (3.0.1)
+    daemons (1.1.9)
+    data_mapper (1.2.0)
+      dm-aggregates (~> 1.2.0)
+      dm-constraints (~> 1.2.0)
+      dm-core (~> 1.2.0)
+      dm-migrations (~> 1.2.0)
+      dm-serializer (~> 1.2.0)
+      dm-timestamps (~> 1.2.0)
+      dm-transactions (~> 1.2.0)
+      dm-types (~> 1.2.0)
+      dm-validations (~> 1.2.0)
+    dm-aggregates (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-constraints (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-core (1.2.1)
+      addressable (~> 2.3)
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-serializer (1.2.2)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      json_pure (~> 1.6)
+      multi_json (~> 1.0)
+    dm-timestamps (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-transactions (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-types (1.2.2)
+      bcrypt-ruby (~> 3.0)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      multi_json (~> 1.0)
+      stringex (~> 1.4)
+      uuidtools (~> 2.1)
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
+    eventmachine (1.0.3)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    fastercsv (1.5.5)
+    hashie (2.0.5)
+    httpauth (0.2.0)
+    json (1.8.0)
+    json_pure (1.8.0)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
+    kramdown (1.0.2)
+    logutils (0.6.0)
+    macaddr (1.6.1)
+      systemu (~> 2.5.0)
+    markdown (1.1.1)
+      kramdown (>= 1.0.2)
+      props (>= 1.0.0)
+      textutils (>= 0.6.4)
+    multi_json (1.7.6)
+    multipart-post (1.2.0)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-github (1.1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.1.17)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    omniauth-openid (1.0.1)
+      omniauth (~> 1.0)
+      rack-openid (~> 1.3.1)
+    props (1.0.0)
+    rack (1.5.2)
+    rack-openid (1.3.1)
+      rack (>= 1.1.0)
+      ruby-openid (>= 2.1.8)
+    rack-protection (1.5.0)
+      rack
+    rdiscount (2.1.6)
+    redcarpet (2.3.0)
+    rqrcode (0.4.2)
+    ruby-openid (2.2.3)
+    shotgun (0.9)
+      rack (>= 1.0)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    stringex (1.5.1)
+    systemu (2.5.2)
+    textutils (0.6.4)
+      logutils (~> 0.5)
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.4.1)
+    uuid (2.3.7)
+      macaddr (~> 1.0)
+    uuidtools (2.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  data_mapper
+  faraday
+  markdown
+  omniauth
+  omniauth-github
+  omniauth-google-oauth2
+  omniauth-openid
+  rdiscount
+  redcarpet
+  rqrcode
+  shotgun
+  sinatra
+  thin
+  uuid
