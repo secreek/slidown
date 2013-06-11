@@ -124,3 +124,25 @@ class VoteEntity < SlideEntity
     (@html + ["</div>"]).join("\n")
   end
 end
+
+class CodeEntity < SlideEntity
+
+  LANG = ["c", "c++", "ruby", "python", "markdown"]
+ 
+  def initialize(*ext)
+    @ext = ext
+    @code = []
+    if LANG.include? ext.first
+      # Do some thing
+    end
+  end
+
+
+  def add_item item
+    @code << item
+  end
+
+  def render
+    "<pre>#{@code.join}</pre>"
+  end
+end
