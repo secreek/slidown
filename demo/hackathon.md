@@ -56,7 +56,7 @@ animation: slide
 ## Active Projects by Git Commits
 =>Slidown 30<=>Android Magicpad 30<=>Hackatus! 19<=>AC-Improved 17<=>Statistic-Board 15<=>EatWhat 10<=>RPi-Maid 7<=>GIS 5<=>DropEmergent 7~~Bar</code>
 
-``` markdown
+```
 ## Team
 ![Team](http://slidown.getfiles.info/users/hf/team-slidown-1.jpg)
 

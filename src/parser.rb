@@ -14,7 +14,17 @@ class MarkdownParser < DocumentParser
     current_content = []
      
     @source.each_line do |line|
-      if line.strip.start_with? '#'
+      if entity.is_a? CodeEntity
+	if line.start_with? "```"
+            current_content << entity.render
+            entity = nil
+        else
+            entity.add_item line
+        end
+        next
+      end
+        
+      if line.strip.start_with?('#')
         if current_node
           current_node[:content] = current_content.join("\n")
           result << current_node
@@ -53,10 +63,14 @@ class MarkdownParser < DocumentParser
             entity = ListEntity.new
           end
           entity.add_item(line.strip)
+        elsif line.strip.start_with? "```"
+          entity = CodeEntity.new(*line[3..-1].split)
         else
-          # If there's a empty line, a entity must come
-          # to an end.
-	  if line.strip.length > 0
+          # If there's an empty line, a entity must come to an end.
+          # But if there's a CodeEntity, there must be something.
+	  if entity.is_a? CodeEntity
+             entity.add_item line
+	  elsif line.strip.length > 0
             current_content << line
           elsif !entity.nil?
             current_content << entity.render
