@@ -1,0 +1,35 @@
+.apply-animation {
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position:absolute;
+  left: 0;
+  top: 0;
+  animation-name:fade-out;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-delay:0s;
+  animation-iteration-count:1;
+  animation-direction:normal;
+  animation-play-state:running;
+  /* Safari and Chrome: */
+  -webkit-animation-name:fade-out;
+  -webkit-animation-duration:1s;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay:0s;
+  -webkit-animation-iteration-count:1;
+  -webkit-animation-direction:normal;
+  -webkit-animation-play-state:running;
+}
+
+@keyframes fade-out
+{
+  0%   {opacity: 255 }
+  100% {opacity: 0 }
+}
+
+@-webkit-keyframes fade-out /* Safari and Chrome */
+{
+  0%   {opacity: 255 }
+  100% {opacity: 0 }
+}
