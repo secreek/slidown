@@ -26,3 +26,6 @@ src/file_repo/
 
 # vim swap
 *.swp
+
+# Backup file
+*.backup
