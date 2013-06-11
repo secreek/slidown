@@ -16,3 +16,5 @@ class Slide
 
   property :created_at, DateTime, :default => Time.now
 end
+
+DataMapper.auto_upgrade!

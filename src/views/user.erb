@@ -5,7 +5,7 @@
   <script src="js/modernizr.custom.js"></script>
   <script>
       function showMySlide() {
-          $.get("/<%= @user %>/slide",
+          $.get("/<%= @user %>/_all",
           function(data) {
               $("#content").html(data);
           },

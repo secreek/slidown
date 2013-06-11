@@ -7,8 +7,8 @@ require 'uuid'
 require 'rqrcode'
 
 # Require slide generate related stuff
-%w{"meta", "entity", "parser", "builder", "generator"}.each do |file|
-  require "#{File.dirname(__FILE__)}/#{file}"
+%w{meta entity parser builder generator}.each do |file|
+  require "#{File.dirname(__FILE__)}/../#{file}.rb"
 end
 
 # Create new slide

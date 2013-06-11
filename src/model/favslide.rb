@@ -10,3 +10,5 @@ class FavSlide
   belongs_to :user,   :key => true
   belongs_to :slide,  :key => true
 end
+
+DataMapper.auto_upgrade!

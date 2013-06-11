@@ -1,8 +1,14 @@
 require 'sinatra'
+require 'sinatra/contrib'
 
-# Simple & Elegant page for slidown
 get '/' do
-  "Welcome to Slidown!"
+  user = session[:login] || cookies[:saved_login]
+  if user
+    session[:login] = user # update login user
+    redirect "/#{user}"
+  else
+    erb :index
+  end
 end
 
 not_found do
