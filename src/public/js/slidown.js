@@ -1,6 +1,8 @@
 var hasNextPage = true;
 
 var animation = parseInt(Math.random() * 67);
+var outClass = 'pt-page-moveToLeft';
+var inClass = 'pt-page-moveFromRight';
 
 switch( animation ) {
 
@@ -279,7 +281,7 @@ function attachAnim() {
   $("#anim-layer").remove();
   $("body").append('<div id="anim-layer"></div>');
   $("#anim-layer").html($("#wrapper").html());
-  $("#anim-layer").attr("class", outClass);
+  $("#anim-layer").attr("class", "apply-animation " + outClass);
   $("#slide").attr("class", inClass);
 }
 

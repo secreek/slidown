@@ -1,32 +1,10 @@
 .apply-animation {
-  display:none;
-  animation-name:slide-out;
-  animation-duration:1s;
-  animation-timing-function:linear;
-  animation-delay:0s;
-  animation-iteration-count:1;
-  animation-direction:normal;
-  animation-play-state:running;
-  /* Safari and Chrome: */
-  -webkit-animation-name:slide-out;
-  -webkit-animation-duration:1s;
-  -webkit-animation-timing-function:linear;
-  -webkit-animation-delay:0s;
-  -webkit-animation-iteration-count:1;
-  -webkit-animation-direction:normal;
-  -webkit-animation-play-state:running;
-}
-
-@keyframes slide-out
-{
-  0%   {left:0; top: 0; }
-  100% {left:100%; top: 0; }
-}
-
-@-webkit-keyframes slide-out /* Safari and Chrome */
-{
-  0%   {left:0; top: 0; }
-  100% {left:100%; top: 0; }
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position:absolute;
+  left: 0;
+  top: 0;
 }
 
 /*author: Glowin */
@@ -187,13 +165,13 @@
   from { transform: translateX(-100%); }
 }
 
-@-webkit-keyframes moveToRight { 
+@-webkit-keyframes moveToRight {
   to { -webkit-transform: translateX(100%); }
 }
-@-moz-keyframes moveToRight { 
+@-moz-keyframes moveToRight {
   to { -moz-transform: translateX(100%); }
 }
-@keyframes moveToRight { 
+@keyframes moveToRight {
   to { transform: translateX(100%); }
 }
 
