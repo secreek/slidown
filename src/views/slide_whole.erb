@@ -20,24 +20,16 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="/theme/<%= @meta.theme %>.css">
-
 </head>
 <body onload="pageLoaded()">
     <div id="slide" class="wrapper">
-    <nav id="helpers">
-      <button title="Previous slide" id="nav-prev" class="nav-prev">&lt;</button>
-      <button title="Jump to a random slide" id="slide-no"></button>
-      <button title="Next slide" id="nav-next" class="nav-next">&gt;</button>
-      <menu>
-        <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">LIST</button>
-        <button type="checkbox" data-command="help" title="View Help">?</button>
-      </menu>
-    </nav>
-    <div id="wrapper">
-        <%= node.content %>
-    </div>
-    <div id="prev_page"></div>
-    <div id="preloader"></div>
+        <nav id="helpers">
+        </nav>
+        <div id="wrapper">
+            <%= node.content %>
+        </div>
+        <div id="nav_bar">
+        </div>
     </div><!-- #slide end -->
 </body>
 </html>

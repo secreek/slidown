@@ -2,12 +2,12 @@ var http = new XMLHttpRequest();
 var default_endpoint = "http://fowllow.com/";
 
 function get_meta(name)
- {
+{
     var metas = document.getElementsByTagName('meta');
     var i;
     for (i = 0; i < metas.length; i++) {
         if (metas[i].getAttribute('name') == name)
-        return metas[i].getAttribute('content');
+            return metas[i].getAttribute('content');
     }
     return null;
 }
