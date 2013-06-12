@@ -1,6 +1,6 @@
 var hasNextPage = true;
 
-var animation = parseInt(Math.random() * 67);
+var animation = 22;/*parseInt(Math.random() * 67);*/
 
 switch( animation ) {
 

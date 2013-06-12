@@ -86,6 +86,12 @@ p {
   line-height: 130%;
 }
 
+.slogan {
+  font-size: 3.0em;
+  text-align: center;
+
+}
+
 #wrapper>p:first-child>img:first-child {
   margin-top: 15vh;
 }

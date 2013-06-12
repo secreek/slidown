@@ -146,3 +146,15 @@ class CodeEntity < SlideEntity
     "<pre>#{@code.join}</pre>"
   end
 end
+
+class SloganEntity < SlideEntity
+
+  def initialize(slo)
+    @slo = slo
+  end
+
+  def render
+    "<p class=\"slogan\">#@slo</p>"
+  end
+end
+

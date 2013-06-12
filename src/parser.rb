@@ -79,6 +79,8 @@ class MarkdownParser < DocumentParser
           entity.add_item(line.strip)
       elsif line.strip.start_with? "```"
         entity = CodeEntity.new(*line[3..-1].split)
+      elsif line.strip.start_with? "!!!"
+        current_content << SloganEntity.new(*line.strip[3..-1]).render
       else
         # If there's an empty line, a entity must come to an end.
         # But if there's a CodeEntity, there must be something.
