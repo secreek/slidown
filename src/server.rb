@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'open-uri'
 
+require_relative './model/model'
+
 base_path = 'file_repo'
 slidown_url = 'http://slidown.com'
 

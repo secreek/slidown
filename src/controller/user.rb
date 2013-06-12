@@ -1,16 +1,8 @@
 require 'sinatra'
-
-get '/:user' do
-  @user = params[:user]
-  @path = File.expand_path(".") + "/file_repo/#{@user}"
-  unless Dir.exist?(@path)
-    erb :user_not_found
-  else
-    erb :user
-  end
-end
+require_relative '../model/model'
 
 get '/register' do
+  erb :register
 end
 
 post '/register' do
@@ -23,4 +15,14 @@ post '/login' do
 end
 
 post '/logout' do
+end
+
+get '/:user' do
+  @user = User.get_by_nickname params[:user]
+  if !!@user
+    @slides = @user.slides
+    erb :user
+  else
+    erb :user_not_found
+  end
 end

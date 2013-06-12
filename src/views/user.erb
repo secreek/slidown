@@ -4,13 +4,13 @@
   <script type="text/javascript" src="/js/jquery.min.js"></script>
   <script src="js/modernizr.custom.js"></script>
   <script>
-      function showMySlide() {
-          $.get("/<%= @user %>/_all",
-          function(data) {
-              $("#content").html(data);
-          },
-          'text');
-      }
+  function showMySlide() {
+    $.get("/<%= @user %>/_all",
+      function(data) {
+        $("#content").html(data);
+      },
+      'text');
+  }
   </script>
 </head>
 <body>
@@ -19,15 +19,19 @@
 		<header class="claerfix">
 			<h1>Slidown<span>Build Slide with Markdown!</span></h1>
 		</header>
-        <div class="main">
-            <div id='content'>
-			<p></br><%- Dir.entries(@path).each do |e| -%>
-       <%- if e.to_s[0] != '.' -%>
-       <%= "<a href=\"/#{@user}/#{e.to_s}\">#{e.to_s}</a></br>\n" %>
-       <%- end -%>
-   <%- end -%></p></div>
+    <div class="main">
+      <div id='content'>
+       <p></br>
+        <%- if @slides.length > 0 -%>
+          <%- @slides.each do |slide| -%>
+          <%= "<a href=\"/#{@user}/#{slide}\">#{slide}</a></br>\n" %>
+          <%- end -%>
+        <%- else -%>
+          Haven't uploaded any slide yet.
+        <%- end -%>
+      </p></div>
 
-       <div class="side">
+      <div class="side">
         <nav id="dr-menu" class="dr-menu dr-menu-open">
           <div class="dr-trigger"><span class="dr-icon dr-icon-menu"></span><a class="dr-label">My Zone</a></div>
           <ul>
