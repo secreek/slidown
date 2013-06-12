@@ -1,8 +1,8 @@
 var hasNextPage = true;
 
-var animation = parseInt(Math.random() * 67);
-var outClass = 'pt-page-moveToLeft';
-var inClass = 'pt-page-moveFromRight';
+var animation = 22; //parseInt(Math.random() * 67);
+var outClass = 'pt-page-scaleDownUp';
+var inClass = 'pt-page-scaleDownUp';
 
 switch( animation ) {
 

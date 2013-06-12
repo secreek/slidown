@@ -206,7 +206,7 @@
 }
 
 @-webkit-keyframes moveToBottom {
-  to { -webkit-transform: translateY(100%); }
+  to { -webkit-transform: translateY(100%); opacity: 0 }
 }
 @-moz-keyframes moveToBottom {
   to { -moz-transform: translateY(100%); }
