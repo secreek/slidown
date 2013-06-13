@@ -1,4 +1,4 @@
-<!---
+﻿<!---
      theme: tech
      animation: slide
 -->
@@ -33,7 +33,8 @@
 
 ## 应用
 
-![caption:IBM俱乐部黑客马拉松](/img/hackathon.jpg)
+![](/img/hackathon.jpg)
+<p class="texg-align:center">IBM俱乐部黑客马拉松</p>
 
 ## Final ##
 
