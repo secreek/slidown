@@ -31,10 +31,14 @@
 + OAuth：开放授权协议
 + ExtParser：解析Markdown扩展语法
 
+## 架构
+
+![](https://raw.github.com/secreek/slidown/trans/src/public/img/struct.png)
+
 ## 应用
 
-![](/img/hackathon.jpg)
-<p class="texg-align:center">IBM俱乐部黑客马拉松</p>
+![](https://raw.github.com/secreek/slidown/trans/src/public/img/hackathon.jpg)
+<p style="text-align:center">IBM俱乐部黑客马拉松</p>
 
 ## Final ##
 
